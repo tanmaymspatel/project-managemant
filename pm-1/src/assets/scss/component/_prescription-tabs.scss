@@ -1,0 +1,43 @@
+.prescription-tabs{
+    border-bottom: 1px solid lighten($primary, 72%);
+
+    .tab-name{
+        margin-left: 1.75rem;
+        font-size: 1.25rem;
+        color: $secondary;
+        position: relative;
+        cursor: pointer;
+
+        @include media-breakpoint-down(lg){
+            font-size: 1.15rem;
+        }
+        &.active-tab{
+            color: $primary;
+            font-weight: 500;
+        }
+
+        &::before{
+            position: absolute;
+            transition: all 0.4s;
+            content: '';
+            background-color: $primary;
+            width: 0%;
+            height: 3px;
+            bottom: -12px;
+        }
+
+        &.active-tab::before{
+            width: 100%;
+            color: lighten($primary, 72%);
+        }
+    }
+}
+.circle-dot::before{
+    position: absolute;
+    content: "";
+    padding: 2px;
+    border-radius: 50%;
+    top: 5px;
+    left: -6px;
+    background-color: #76969E;
+}

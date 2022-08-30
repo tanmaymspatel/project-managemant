@@ -1,0 +1,573 @@
+// /* Mobile size full screen style*/
+// .content-wrapper {
+//   // max-width: 1040px;
+//   width: 100%;
+//   margin: 0 auto;
+// }
+
+// .content {
+//   height: 100%;
+
+//   @include media-breakpoint-up(lg) {
+//     height: auto;
+//   }
+// }
+
+// .image-fit {
+//   max-width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+// .registration-form-heading {
+//   font-size: 1.125rem;
+// }
+
+// .registration-content {
+//   width: 100%;
+//   height: 100%;
+//   max-width: 1040px;
+
+//   /* large size screen style*/
+//   @include media-breakpoint-up(lg) {
+//     border-radius: $container-border-radius;
+//   }
+// }
+
+// // Author: Himani Barot
+
+// // Start :Wrapper Section
+// .main-wrapper {
+//   background-color: $main-content-bg;
+//   transition: $sidebar-transition;
+// }
+
+// .user-profile-img {
+//   max-width: 100%;
+//   height: auto;
+// }
+
+// // End :Wrapper Section
+
+// // Start :Pharmacy List styles
+// .list-container {
+//   .list-item {
+//     @include media-breakpoint-up(xs) {
+//       padding: $list-item-padding-sm-y $list-item-padding-sm-x;
+//     }
+
+//     @include media-breakpoint-up(sm) {
+//       padding: $list-item-padding-y $list-item-padding-x;
+//     }
+
+//     border-bottom: 2px solid $extra-light;
+
+//     &:hover,
+//     &.selected {
+//       background-color: $list-item-hover;
+//     }
+
+//     .list-item-name {
+//       @include media-breakpoint-down(sm) {
+//         font-size: 0.875rem;
+//       }
+
+//       @include media-breakpoint-up(sm) {
+//         font-size: 1rem;
+//       }
+//     }
+
+//     .list-item-text {
+//       font-size: 0.875rem;
+//     }
+
+//     .list-item-image {
+//       transition: all $transition-time;
+
+
+//       @include media-breakpoint-down(sm) {
+//         height: 35px;
+//         width: 35px;
+//       }
+
+//       @include media-breakpoint-up(sm) {
+//         height: 50px;
+//         width: 50px;
+//       }
+//     }
+//   }
+
+//   .details-view-layout {
+//     @include media-breakpoint-down(sm) {
+//       padding: 1rem;
+//     }
+
+//     @include media-breakpoint-up(sm) {
+//       padding: 2rem;
+//     }
+
+//     .details-view-image {
+//       object-fit: cover;
+//       transition: all $transition-time;
+
+//       @include media-breakpoint-down(sm) {
+//         height: 100px;
+//         width: 100px;
+//       }
+
+//       @include media-breakpoint-up(sm) {
+//         height: 160px;
+//         width: 160px;
+//       }
+//     }
+
+//     .details-view-name {
+//       width: 90%;
+//     }
+
+//     .details-name-subtitle {
+//       font-size: 0.875rem;
+//       color: $image-outline;
+
+//       .specialization {
+//         font-weight: 500;
+//       }
+//     }
+
+//     .details-label-value {
+//       color: $dark-green;
+//     }
+
+//     .certificate {
+//       font-size: 0.725rem;
+//       padding: 0.5rem;
+//       border-radius: 6px;
+//     }
+
+//     .details-label {
+//       font-size: 0.875rem;
+//       align-self: center;
+//     }
+//   }
+// }
+
+// // mobile view details view scss
+// .view-layout {
+//   transition: all $transition-time;
+
+//   @include media-breakpoint-down(lg) {
+//     @include position(fixed, 0, 0, 0, 0);
+//     transform: translateX(100%);
+//     padding: 0;
+//     margin: 0;
+//   }
+
+//   &.view-layout-active {
+//     @include media-breakpoint-down(lg) {
+//       transform: translateX(0%);
+//       z-index: 999;
+//     }
+//   }
+// }
+
+// // End :Pharmacy List styles
+
+// // @Author: Shreya Patel
+// // Start: dashboard
+// .card-title-padding {
+//   padding: $dashboard-content-padding $dashboard-content-padding 0 $dashboard-content-padding;
+
+//   @include media-breakpoint-down(md) {
+//     padding: 1rem 1rem 0 1rem;
+//   }
+// }
+
+// .card-body-padding {
+//   padding: 0 $dashboard-content-padding $dashboard-content-padding $dashboard-content-padding;
+
+//   @include media-breakpoint-down(md) {
+//     padding: 0 1rem 1rem 1rem;
+//   }
+// }
+
+// .card-radius {
+//   border-radius: 1rem;
+
+//   @include media-breakpoint-down(sm) {
+//     border-radius: 0.5rem;
+//   }
+// }
+
+// // greeting-card
+// .greeting-card {
+//   background-image: url("../../images/card-bg.svg");
+//   background-repeat: no-repeat;
+//   background-position: -80px 50px;
+//   background-size: 180px;
+
+//   @include media-breakpoint-down(sm) {
+//     background-image: none;
+//   }
+
+//   .greeting {
+//     width: 70%;
+
+//     padding-left: 6rem;
+//     padding-bottom: 1rem;
+
+//     @include media-breakpoint-down(sm) {
+//       padding: 1rem;
+//     }
+//   }
+
+//   .card-img-bg {
+//     margin-top: -0.5rem;
+//   }
+// }
+
+// // inside card border
+// .card-border {
+//   border-left: 2px solid $blue-light;
+
+//   @include media-breakpoint-down(sm) {
+//     border-left: 1px solid transparent;
+//   }
+// }
+
+// // count of pharmacy and patient
+// .card-info-padding {
+//   padding-left: 1rem;
+
+//   @include media-breakpoint-up(md) {
+//     padding-left: 2rem;
+//   }
+// }
+
+// .prescription-logo-border {
+//   border: 1px solid $image-outline;
+// }
+
+// .prescription-logo {
+//   width: 50px;
+//   height: 50px;
+// }
+
+// .card-label {
+//   padding: 0 10px;
+//   border-radius: 5px;
+//   font-weight: 500;
+//   background-color: $aside-bg;
+// }
+
+// .logo-image {
+//   width: 65px;
+//   height: 65px;
+// }
+
+// // no record found color
+// .text-gray-light {
+//   color: $gray-light;
+// }
+
+// //count-font-size
+// .count-stats {
+//   font-size: 1.25rem;
+
+//   @include media-breakpoint-down(md) {
+//     font-size: 1rem;
+//   }
+// }
+
+// // End: Dashboard
+
+// // Author : Sushil Hariakar
+
+// // Start: user-profile
+// .user-profile {
+//   border-radius: $border-radius-container;
+//   box-shadow: $box-shadow;
+//   min-height: 100%;
+
+//   .profile-info,
+//   .profile-data {
+//     padding: $profile-padding;
+//     font-size: 1.2rem;
+//     @include media-breakpoint-down(xxl) {
+//       padding: 2rem 6rem;
+//     }
+
+//     @include media-breakpoint-down(xl) {
+//       padding: 2rem 4rem;
+//     }
+
+//     @include media-breakpoint-down(lg) {
+//       padding: 2rem 4rem;
+//       font-size: 1rem;
+//     }
+
+//     @include media-breakpoint-down(md) {
+//       padding: 2rem 2rem;
+//     }
+
+//     @include media-breakpoint-down(sm) {
+//       padding: 1rem 1rem;
+//       font-size: $font-size-base-sm;
+//     }
+//   }
+
+//   .profile-info {
+//     border-bottom: $profile-info-border-bottom;
+
+//     .user-image-wrapper {
+//       height: 120px;
+//       width: 120px;
+//       border: $profile-image-border;
+
+//       @include media-breakpoint-down(md) {
+//         height: 100px;
+//         width: 100px;
+//       }
+
+//       .user-image {
+//         max-width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//     }
+
+//     .user-name-wrapper {
+//       @include media-breakpoint-down(sm) {
+//         font-size: $font-size-base;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//       }
+
+//       .user-name {
+//         max-width: 90%;
+
+//         @include media-breakpoint-up(sm) {
+//           max-width: 70%;
+//         }
+
+//       }
+//     }
+
+//     .user-specialization {
+//       @include media-breakpoint-down(sm) {
+//         font-size: $font-size-base-sm;
+//         text-align: center;
+//       }
+//     }
+//   }
+
+//   .profile-data {
+//     .file-container {
+//       background-color: $blue-light;
+
+//       .file-title {
+//         font-size: $file-title-size;
+//       }
+//     }
+//   }
+
+//   .certificate {
+//     padding: 0.875rem 1.25rem;
+
+//     @include media-breakpoint-down(sm) {
+//       padding: 0.5rem 0.5rem;
+//     }
+//   }
+// }
+
+// // End: user-profile
+
+// /* styles for create prescription */
+// /* @Author : Sneha Lad */
+// .precription-wrapper {
+//   height: 100%;
+//   box-shadow: 2px 3px 30px #145b690d;
+//   font-size: 0.875rem;
+
+//   .form-control {
+//     font-size: 0.875rem;
+//   }
+
+//   .btn {
+//     font-size: 0.875rem;
+//   }
+
+//   @include media-breakpoint-down(md) {
+//     height: auto;
+//   }
+// }
+
+// // Author: Pooja Manvani
+// // Start: My-patients styles.
+// .patient-list-container {
+//   border-radius: $border-radius-container;
+// }
+
+// .patient-view-container {
+//   border-radius: $border-radius-container;
+// }
+
+// .selected {
+//   background-color: $list-item-hover;
+// }
+
+// .prescripton-diseases {
+//   background-color: $aside-bg;
+
+//   // z-index: 9999;
+//   .prescription-medicine {
+//     z-index: -10;
+//     border-color: $aside-bg;
+//     border-radius: 10px;
+//     left: 0;
+//     top: 20px;
+//   }
+// }
+
+// .prescription-container {
+//   font-size: 16px;
+
+//   @include media-breakpoint-up(xs) {
+//     overflow: auto;
+//     padding: 0px;
+//   }
+// }
+
+// .list-item-border {
+//   border-bottom: 2px solid $extra-light;
+// }
+
+// .list-item {
+//   @include media-breakpoint-up(xs) {
+//     padding: 1rem;
+//   }
+// }
+
+// .prescription-preview {
+//   border-radius: 16px;
+//   font-size: 1rem;
+// }
+
+// // End: My-patients styles.
+
+// // End: My-patients styles.
+
+// // Start: Pharmacy-Home styles.
+// .fs-xsm {
+//   font-size: $font-size-xsm;
+// }
+
+// .count-stats-doctor-logo {
+//   border: 1px solid $image-outline;
+//   border-radius: 8px;
+// }
+
+// .status-badge {
+//   border-radius: 3px;
+//   height: 17px;
+//   overflow: hidden;
+// }
+
+// .dashboard-list-item-pt {
+//   padding-top: 0.85rem;
+// }
+
+// // End: Pharmacy-Home styles.
+// //start: Search - Prescription Css
+// .search-patient-list {
+//   .patient-number {
+//     color: $dark-green;
+//   }
+// }
+
+// .search-prescription {
+//   padding: 1.75rem 2rem;
+
+//   @include media-breakpoint-down(sm) {
+//     padding: $list-item-padding-sm-y $list-item-padding-sm-x;
+//   }
+
+//   .form-floating .form-control~label {
+//     padding: 0.75rem 0 1.5rem 0.5rem;
+//   }
+// }
+
+// .prescription-list-item {
+//   transition: all $transition-time;
+//   padding: $list-item-padding-y $list-item-padding-x;
+
+//   @include media-breakpoint-down(sm) {
+//     padding: $list-item-padding-sm-y $list-item-padding-sm-x;
+//   }
+
+//   &:hover,
+//   &.active {
+//     background-color: $list-item-hover;
+//   }
+// }
+
+// .patient-image {
+//   height: $list-img-size;
+//   width: $list-img-size;
+// }
+
+// .prescription-uploaded-image{
+//   height: auto;
+//   max-width: 100%;
+// }
+
+// .no-search-prescription-image {
+//   @include media-breakpoint-down(sm) {
+//     width: 220px;
+//   }
+// }
+
+// //end: Search - Prescription Css
+
+// // Author: Himani Barot
+// // Start: Uploaded prescription
+// .uploaded-prescription-img {
+//   width: 50px;
+//   height: 50px;
+
+//   img {
+//     max-width: 100%;
+//     height: auto;
+//   }
+// }
+
+// .prescription-text {
+//   font-size: 1.115rem;
+//   vertical-align: top;
+// }
+
+// .prescription-desc {
+//   font-size: 0.75rem;
+// }
+
+// .view-files-container {
+//   img {
+//     max-width: 100%;
+//     height: 100%;
+//   }
+
+//   iframe {
+//     width: 100%;
+//   }
+// }
+
+// // End: Uploaded prescription
+
+// // Start: Create prescription
+// .prescription-form {
+//   border-bottom: 2px solid $blue-light;
+//   @include media-breakpoint-up(md) {
+//     border-bottom: none;
+//     border-right: 2px solid $blue-light;
+//   }
+// }
