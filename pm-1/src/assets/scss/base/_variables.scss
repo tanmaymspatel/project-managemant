@@ -3,9 +3,24 @@ $font-family-base: "Roboto", sans-serif;
 $font-size-base: 1rem;
 $transition-time: 0.4s;
 $font-size-base-sm: 0.875rem;
-////// Bootstrap
-//aside
-// $aside-width: 300px;
+
+// general
+$transition-timing: 0.4s;
+$circle-radius: 50%;
+
+// sidebar 
+$sidebar-width : 250px;
+$sideheader-height: 100px;
+$border-radius: 10px;
+
+// header
+$header-img-size: 45px;
+
+// navigation link
+$nav-link-padding-x: 0;
+$link-color: $dark;
+$link-decoration: none;
+
 
 // // spacer
 // $spacer: 1rem;

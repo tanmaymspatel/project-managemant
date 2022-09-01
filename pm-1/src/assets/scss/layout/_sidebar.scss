@@ -1,3 +1,32 @@
+#sidebar{
+    flex: 0 0 $sidebar-width;
+    background-color: $light;
+    border-right: 1px solid $dark;
+    .sidebar-header{
+        height: $sideheader-height;
+    }
+    .nav-link{
+        border-radius: $border-radius;
+        &.active, &:hover{
+            background-color: $primary;
+            color: $light;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // #sidebar {
 //     flex: 0 0 $sidebar-width;
 //     width: $sidebar-width;
