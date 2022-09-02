@@ -1,0 +1,42 @@
+<div class="h-100 row">
+    <div id="login-image" class="col-7 d-flex flex-column justify-content-evenly p-3">
+        <h4 class="text-light p-5">"Operations keeps the lights on, strategy provides a light at the end of the tunnel,
+            but project management
+            is the train engine that moves the organization forward."
+        </h4>
+        <h2 class="text-light text-end">
+            - Joy Gumz
+        </h2>
+    </div>
+    <div id="login-form" class="col-5 d-flex flex-column justify-content-center">
+        <div class="d-flex align-items-center py-4">
+            <span class="icon-logo home-logo text-primary"></span>
+            <span class="company-name ps-3">Cube Solutions</span>
+        </div>
+        <div class="d-flex align-items-center pt-2">
+            <span class="welcome-text">Hello, Welcome Back!</span>
+        </div>
+        <div>
+            <h5 class="subtitle">
+                let us help you to manage.
+            </h5>
+        </div>
+        <div class="py-4">
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="input-group border rounded-3">
+                    <div class="bg-secondary d-flex align-items-center justify-content-center p-2" >
+                        <span class="icon-email"></span>
+                    </div>
+                    <input type="email" class="form-control border-0" formControlName="email" placeholder="Enter email address">
+                </div>
+                <div class="my-3 input-group border rounded-3">
+                    <div class="bg-secondary d-flex align-items-center justify-content-center p-2" >
+                        <span class="icon-password"></span>
+                    </div>
+                    <input type="password" class="form-control border-0" formControlName="password" placeholder="Enter password">
+                </div>
+                <button type="submit" class="mt-2 btn btn-primary text-light">Log in</button>
+            </form>
+        </div>
+    </div>
+</div>

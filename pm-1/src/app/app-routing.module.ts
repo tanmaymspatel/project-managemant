@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MasterComponent } from './core/master/master.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { MasterComponent } from './core/components/master/master.component';
 
 const routes: Routes = [
   {
     path:"projects", component:MasterComponent
   },
   {
-    path:"", redirectTo:"projects", pathMatch:"full"
-  }
+    path:"login", component:LoginComponent
+  },
+  {
+    path:"", redirectTo:"login", pathMatch:"full"
+  },
+  { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
 ];
 
 @NgModule({

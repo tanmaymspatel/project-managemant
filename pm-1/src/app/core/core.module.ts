@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MasterComponent } from './master/master.component';
-import { HeaderComponent } from './master/header/header.component';
-import { SidebarComponent } from './master/sidebar/sidebar.component';
+import { HeaderComponent } from './components/master/header/header.component';
+import { MasterComponent } from './components/master/master.component';
+import { SidebarComponent } from './components/master/sidebar/sidebar.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -10,15 +14,21 @@ import { SidebarComponent } from './master/sidebar/sidebar.component';
   declarations: [
     HeaderComponent,
     SidebarComponent,
-    MasterComponent
+    MasterComponent,
+    LoginComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, 
+    ReactiveFormsModule
   ],
   exports:[
     HeaderComponent,
     SidebarComponent,
-    MasterComponent
+    MasterComponent,
+    LoginComponent
+  ], 
+  providers:[
+    AuthService
   ]
 })
 export class CoreModule { }

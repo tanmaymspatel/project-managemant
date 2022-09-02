@@ -5,14 +5,16 @@
             "name": "Tanmay",
             "lastName":"Patel",
             "email": "tanmay.patel@1rivet.com",
-            "password":"Admin@123"
+            "password":"Admin@123",
+            "profilePicture":"../../../../assets/images/user-image.png"
         },
         {
             "id": 2,
             "name": "Mehul",
             "lastName":"Patel",
             "email": "mehul.patel@1rivet.com",
-            "password":"Admin@123"
+            "password":"Admin@123",
+            "profilePicture":"../../../../assets/images/user-image.png"
         }
     ]
 }
