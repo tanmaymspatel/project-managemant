@@ -1,5 +1,5 @@
 export class UserDetails{
-    public id : number; 
+    public id : string; 
     public name : string; 
     public lastName : string; 
     public email : string; 
@@ -7,7 +7,7 @@ export class UserDetails{
     public profilePicture : string; 
 
     constructor(
-        id: number,
+        id: string,
         name: string,
         lastName: string,
         email: string,

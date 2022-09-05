@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './core/components/login/login.component';
+import { LoginContainerComponent } from './core/components/login/login-container.component';
 import { MasterComponent } from './core/components/master/master.component';
 
 const routes: Routes = [
@@ -8,7 +8,7 @@ const routes: Routes = [
     path:"projects", component:MasterComponent
   },
   {
-    path:"login", component:LoginComponent
+    path:"login", component:LoginContainerComponent
   },
   {
     path:"", redirectTo:"login", pathMatch:"full"

@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/master/header/header.component';
 import { MasterComponent } from './components/master/master.component';
 import { SidebarComponent } from './components/master/sidebar/sidebar.component';
-import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginPresentationComponent } from './components/login/login-presentation/login-presentation.component';
+import { LoginContainerComponent } from './components/login/login-container.component';
 
 
 
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     SidebarComponent,
     MasterComponent,
-    LoginComponent
+    LoginPresentationComponent,
+    LoginContainerComponent
   ],
   imports: [
     CommonModule, 
@@ -25,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     SidebarComponent,
     MasterComponent,
-    LoginComponent
+    LoginPresentationComponent,
+    LoginContainerComponent
   ], 
   providers:[
     AuthService
