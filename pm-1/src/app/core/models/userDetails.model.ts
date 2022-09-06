@@ -5,6 +5,7 @@ export class UserDetails{
     public email : string; 
     public password : string; 
     public profilePicture : string; 
+    public projectId ?: string[];
 
     constructor(
         id: string,

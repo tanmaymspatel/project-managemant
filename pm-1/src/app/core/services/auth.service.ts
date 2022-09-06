@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { UserDetails } from '../models/userDetails.model';
 import { Subject } from 'rxjs/internal/Subject';
+import { Router } from '@angular/router';
 
 
 @Injectable()
@@ -13,7 +14,8 @@ export class AuthService {
   private _user: Subject<UserDetails>
   public user$: Observable<UserDetails>
   constructor(
-    private _http: HttpClient
+    private _http: HttpClient,
+    private _router: Router 
   ) {
     this._apiLink = environment.baseURL;
     this._user = new Subject();
@@ -27,5 +29,10 @@ export class AuthService {
   public sendUserData(currentUSer : UserDetails){
     this._user.next(currentUSer);
     localStorage.setItem('user',JSON.stringify(currentUSer))
+  }
+
+  public logOut(){
+    localStorage.removeItem('user');
+    this._router.navigateByUrl('login')
   }
 }

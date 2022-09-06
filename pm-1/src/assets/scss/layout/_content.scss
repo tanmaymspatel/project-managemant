@@ -5,15 +5,21 @@
     background-size: cover;
 }
 #login-form{
-    padding: 10rem;
+    padding:6rem;
+    @include media-breakpoint-up(md) {
+        padding: 4rem;
+    }
+    @include media-breakpoint-up(xxl) {
+        padding: 10rem;
+    }
     .home-logo{
-        font-size: 4rem;
+        font-size: 3rem;
     }
     .company-name{
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     .welcome-text{
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     .subtitle{
         font-size: 0.875rem;

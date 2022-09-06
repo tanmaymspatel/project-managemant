@@ -1,20 +1,48 @@
 {
-    "users":[
+    "users": [
         {
             "id": 1,
             "name": "Tanmay",
-            "lastName":"Patel",
+            "lastName": "Patel",
             "email": "tanmay.patel@1rivet.com",
-            "password":"Admin@123",
-            "profilePicture":"../../../../assets/images/user-image.png"
+            "password": "Admin@123",
+            "profilePicture": "../../../../assets/images/user-image.png",
+            "projectId":[1,2,3,4]
         },
         {
             "id": 2,
             "name": "Mehul",
-            "lastName":"Patel",
+            "lastName": "Patel",
             "email": "mehul.patel@1rivet.com",
-            "password":"Admin@123",
-            "profilePicture":"../../../../assets/images/user-image.png"
+            "password": "Admin@123",
+            "profilePicture": "../../../../assets/images/user-image.png",
+            "projectId":[1,2,3,4]
+        }
+    ],
+    "projects": [
+        {
+            "projectId": 1,
+            "projectName": "Project 1",
+            "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
+            "duration":"6 months"
+        },
+        {
+            "projectId": 2,
+            "projectName": "Project 2",
+            "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
+            "duration":"8 months"
+        },
+        {
+            "projectId": 3,
+            "projectName": "Project 3",
+            "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
+            "duration":"11 months"
+        },
+        {
+            "projectId": 4,
+            "projectName": "Project 4",
+            "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
+            "duration":"3 months"
         }
     ]
 }
