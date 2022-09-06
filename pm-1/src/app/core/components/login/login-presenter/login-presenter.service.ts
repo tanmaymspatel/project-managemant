@@ -26,8 +26,13 @@ export class LoginPresenterService {
   }
 
   public onLogin(formData:FormGroup, userList: UserDetails[]){
+    let name;
     this.currentUser = userList.find((item: UserDetails) => item.email === formData.value.email && item.password === formData.value.password)
-    if(formData.valid){
+    name = this.currentUser.name
+    if(!this.currentUser){
+      alert('Please type correct credentials')
+    }
+    if(formData.valid && this.currentUser){
       this._router.navigateByUrl('projects');
       this.authService.sendUserData(this.currentUser)
     }

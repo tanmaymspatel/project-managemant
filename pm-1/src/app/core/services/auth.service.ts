@@ -11,15 +11,11 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   private _apiLink: string
-  private _user: Subject<UserDetails>
-  public user$: Observable<UserDetails>
   constructor(
     private _http: HttpClient,
     private _router: Router 
   ) {
     this._apiLink = environment.baseURL;
-    this._user = new Subject();
-    this.user$ = this._user.asObservable();
   }
 
   public getUsers(): Observable<UserDetails[]> {
@@ -27,8 +23,7 @@ export class AuthService {
   }
 
   public sendUserData(currentUSer : UserDetails){
-    this._user.next(currentUSer);
-    localStorage.setItem('user',JSON.stringify(currentUSer))
+    localStorage.setItem('user',JSON.stringify(currentUSer))    
   }
 
   public logOut(){

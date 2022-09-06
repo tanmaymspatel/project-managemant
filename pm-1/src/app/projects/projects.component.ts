@@ -10,9 +10,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private _service:AuthService) { }
 
   ngOnInit(): void {
-    this._service.user$.subscribe((user)=>{
-      console.log(user);
-    })
+   
   }
   
 }

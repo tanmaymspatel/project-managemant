@@ -32,6 +32,7 @@ export class LoginPresentationComponent implements OnInit {
     this.loginForm = this._loginService.buildLoginForm();
     this.currentUser = new EventEmitter();
     this.formSubmitted = false;
+    
   }
 
   ngOnInit(): void {
@@ -47,7 +48,4 @@ export class LoginPresentationComponent implements OnInit {
     return this.loginForm['controls'];
   }
 
-  public blur() {
-    console.log(this.loginForm);
-  }
 }
