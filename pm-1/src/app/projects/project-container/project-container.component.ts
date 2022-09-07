@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDetails } from 'src/app/core/models/userDetails.model';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'app-project-container',
@@ -6,10 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectContainerComponent implements OnInit {
 
-  constructor() { 
+  public user: any;
+  public projectIds!: string[];
+  public projectDetails: any[];
+
+  constructor
+    (
+      private _projectServices: ProjectService
+    ) {
+    this.projectDetails = [];
   }
 
   ngOnInit(): void {
+    this.user = localStorage.getItem('user');
+    this.projectIds = JSON.parse(this.user).projectId;
+
+    this.getProjectDetails();
+  }
+
+  private getProjectDetails() {
+    this.projectIds.forEach((id) => {
+      this._projectServices.getProjectById(id).subscribe((res) => {
+        this.projectDetails.push(res);
+      })
+    })        
   }
 
 }

@@ -10,25 +10,25 @@
     <div class="px-3 d-flex flex-column justify-content-between overflow-hidden flex-grow-1">
         <div class="flex-grow-1">
             <ul class="nav">
-                <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2 active" [routerLink]="userName + '/projects'">
+                <li class="nav-item w-100" *ngIf="isProjectPage">
+                    <a class="nav-link my-1 cursor-pointer ps-2 active" routerLink="/projects/home">
                         <span class="icon icon-dashboard"></span>
                         <span class="ps-2">Projects</span>
                     </a>
                 </li>
-                <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2" routerLink="/projects/dashboard">
+                <li class="nav-item w-100" *ngIf="!isProjectPage">
+                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'dashboard']">
                         <span class="icon icon-dashboard"></span>
                         <span class="ps-2">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item w-100">
+                <li class="nav-item w-100" *ngIf="!isProjectPage">
                     <a class="nav-link my-1 cursor-pointer ps-2">
                         <span class="icon icon-task"></span>
                         <span class="ps-2">Tasks</span>
                     </a>
                 </li>
-                <li class="nav-item w-100">
+                <li class="nav-item w-100" *ngIf="!isProjectPage">
                     <a class="nav-link my-1 cursor-pointer ps-2">
                         <span class="icon icon-users"></span>
                         <span class="ps-2">Teams</span>

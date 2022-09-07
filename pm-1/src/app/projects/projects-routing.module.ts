@@ -5,12 +5,12 @@ import { ProjectContainerComponent } from './project-container/project-container
 
 const routes: Routes =
   [
-    { path: '', redirectTo: 'projects', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
-      path: 'projects', component: ProjectContainerComponent
+      path: 'home', component: ProjectContainerComponent
     },
     {
-      path: 'dashboard', component: DashboardComponent
+      path: ':id/dashboard', component: DashboardComponent
     }
 
   ];

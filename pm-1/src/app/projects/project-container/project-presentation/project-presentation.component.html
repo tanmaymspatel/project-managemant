@@ -1,1 +1,16 @@
-<p>project-presentation works!</p>
+<div class="text-end py-3 mb-3">
+    <button class="btn btn-primary">Create Project</button>
+</div>
+<div class="row g-4">
+    <div *ngFor="let projectDetails of projectDetails" class="col-4">
+        <a class="card bg-light p-4 cursor-pointer transition" (click)="onProjectClick(projectDetails.id)">
+            <h4 class="pb-2">{{projectDetails?.projectName}}</h4>
+            <p>{{projectDetails?.description}}
+            </p>
+            <p class="text-end">
+                <span class="icon-duration"></span>
+                <span class="ps-2 project-duration">{{projectDetails?.duration}}</span>
+            </p>
+        </a>
+    </div>
+</div>

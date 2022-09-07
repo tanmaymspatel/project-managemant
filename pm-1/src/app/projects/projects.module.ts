@@ -7,6 +7,8 @@ import { ProjectContainerComponent } from './project-container/project-container
 import { ProjectPresentationComponent } from './project-container/project-presentation/project-presentation.component';
 import { DashboardComponent } from './Dashboard/dashboard.component';
 import { DashboardPresentationComponent } from './Dashboard/dashboard-presentation/dashboard-presentation.component';
+import { SharedModule } from '../shared/shared.module';
+import { ProjectService } from './services/project.service';
 
 
 @NgModule({
@@ -19,10 +21,14 @@ import { DashboardPresentationComponent } from './Dashboard/dashboard-presentati
   ],
   imports: [
     CommonModule,
-    ProjectsRoutingModule
+    ProjectsRoutingModule,
+    SharedModule
   ],
   exports:[
     ProjectPresentationComponent
+  ], 
+  providers:[
+    ProjectService
   ]
 })
 export class ProjectsModule { }
