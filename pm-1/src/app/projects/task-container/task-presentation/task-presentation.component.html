@@ -1,0 +1,58 @@
+<div class="text-end py-3 mb-3">
+    <button class="btn btn-primary">
+        <span>+</span>
+        <span class="ps-2">Create Task</span>
+    </button>
+</div>
+<div class="row">
+    <div class="col-4">
+        <h6 class="list-heading pb-3 border-primary">
+            <span>To Do</span>
+            <span class="list-count ms-4">{{todoList.length}}</span> 
+        </h6>
+        <div class="mt-4">
+            <div *ngFor="let task of todoList" class="card cursor-pointer px-3 py-2 mt-2">
+                <p>{{task?.name}}</p>
+                <div class="progress-bar">
+                    <p class="text-end mb-0">{{task?.completedMiniTasks.length}}/{{task?.totalMiniTasks.length}}</p>
+                    <p class="mb-0">-------------------------</p>
+                </div>
+                <p>{{task?.priority}}</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-4">
+        <h6 class="list-heading pb-3 border-info">
+            <span>Active Tasks</span>
+            <span class="list-count ms-4">{{activeTaskList.length}}</span>
+        </h6>
+        <div class="mt-4">
+            <div *ngFor="let task of activeTaskList" class="card cursor-pointer px-3 py-2 mt-2">
+                <p>{{task?.name}}</p>
+                <div class="progress-bar">
+                    <p class="text-end mb-0">{{task?.completedMiniTasks.length}}/{{task?.totalMiniTasks.length}}</p>
+                    <p class="mb-0">-------------------------</p>
+                </div>
+                <p>{{task?.priority}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <h6 class="list-heading pb-3 border-success">
+            <span>Done Tasks</span>
+            <span class="list-count ms-4">{{doneTaskList.length}}</span>
+        </h6>
+        <div class="mt-4">
+            <div *ngFor="let task of doneTaskList" class="card cursor-pointer px-3 py-2 mt-2">
+                <p>{{task?.name}}</p>
+                <div class="progress-bar">
+                    <p class="text-end mb-0">{{task?.completedMiniTasks.length}}/{{task?.totalMiniTasks.length}}</p>
+                    <p class="mb-0">-------------------------</p>
+                </div>
+                <p>{{task?.priority}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

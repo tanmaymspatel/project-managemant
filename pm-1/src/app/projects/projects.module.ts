@@ -9,6 +9,8 @@ import { DashboardComponent } from './Dashboard/dashboard.component';
 import { DashboardPresentationComponent } from './Dashboard/dashboard-presentation/dashboard-presentation.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProjectService } from './services/project.service';
+import { TaskContainerComponent } from './task-container/task-container.component';
+import { TaskPresentationComponent } from './task-container/task-presentation/task-presentation.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ProjectService } from './services/project.service';
     ProjectContainerComponent,
     ProjectPresentationComponent,
     DashboardComponent,
-    DashboardPresentationComponent
+    DashboardPresentationComponent,
+    TaskContainerComponent,
+    TaskPresentationComponent
   ],
   imports: [
     CommonModule,

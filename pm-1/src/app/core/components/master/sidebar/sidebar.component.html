@@ -8,28 +8,28 @@
     </div>
     <!-- end: sidebar header -->
     <div class="px-3 d-flex flex-column justify-content-between overflow-hidden flex-grow-1">
-        <div class="flex-grow-1">
+        <div class="flex-grow-1 overflow-y-auto">
             <ul class="nav">
-                <li class="nav-item w-100" *ngIf="isProjectPage">
-                    <a class="nav-link my-1 cursor-pointer ps-2 active" routerLink="/projects/home">
+                <li class="nav-item w-100"  >
+                    <a class="nav-link my-1 cursor-pointer ps-2" routerLink="/projects/home" routerLinkActive="active">
                         <span class="icon icon-dashboard"></span>
                         <span class="ps-2">Projects</span>
                     </a>
                 </li>
                 <li class="nav-item w-100" *ngIf="!isProjectPage">
-                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'dashboard']">
+                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'dashboard']" routerLinkActive="active">
                         <span class="icon icon-dashboard"></span>
                         <span class="ps-2">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item w-100" *ngIf="!isProjectPage">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'tasks']" routerLinkActive="active">
                         <span class="icon icon-task"></span>
                         <span class="ps-2">Tasks</span>
                     </a>
                 </li>
                 <li class="nav-item w-100" *ngIf="!isProjectPage">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                    <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-users"></span>
                         <span class="ps-2">Teams</span>
                     </a>
@@ -40,13 +40,13 @@
         <div>
             <ul class="nav pb-3">
                 <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                    <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-help"></span>
                         <span class="ps-2">Help</span>
                     </a>
                 </li>
                 <li class="nav-item w-100" (click)="logOut()">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                    <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-signout"></span>
                         <span class="ps-2">log Out</span>
                     </a>

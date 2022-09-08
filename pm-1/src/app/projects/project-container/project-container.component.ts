@@ -23,15 +23,17 @@ export class ProjectContainerComponent implements OnInit {
     this.user = localStorage.getItem('user');
     this.projectIds = JSON.parse(this.user).projectId;
 
-    this.getProjectDetails();
+    this.getProjectDetailsById();
   }
 
-  private getProjectDetails() {
+  private getProjectDetailsById() {
     this.projectIds.forEach((id) => {
       this._projectServices.getProjectById(id).subscribe((res) => {
         this.projectDetails.push(res);
       })
-    })        
+    })       
+    console.log(this.projectDetails);
+     
   }
 
 }
