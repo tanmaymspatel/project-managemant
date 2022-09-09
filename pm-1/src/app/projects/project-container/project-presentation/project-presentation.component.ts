@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectPresenterService } from '../project-presenter/project-presenter.service';
 
@@ -8,6 +8,8 @@ import { ProjectPresenterService } from '../project-presenter/project-presenter.
   viewProviders: [ProjectPresenterService]
 })
 export class ProjectPresentationComponent implements OnInit {
+
+  @Output() public currentProjectId: EventEmitter<string> = new EventEmitter();
 
   private _projectDetails !: any;
   public get projectDetails(): any {
@@ -20,17 +22,15 @@ export class ProjectPresentationComponent implements OnInit {
   }
 
   constructor
-  (
-    private _router: Router
-  ) 
-  { }
+    (
+      private _router: Router
+    ) { }
 
   ngOnInit(): void {
   }
-  public onProjectClick(id: string){
-    console.log(id);
+  public onProjectClick(id: string) {
+    this.currentProjectId.emit(id)
     this._router.navigateByUrl(`/projects/${id}/dashboard`)
-    
   }
 
 }

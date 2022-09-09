@@ -31,9 +31,11 @@ export class ProjectContainerComponent implements OnInit {
       this._projectServices.getProjectById(id).subscribe((res) => {
         this.projectDetails.push(res);
       })
-    })       
-    console.log(this.projectDetails);
-     
+    })
+  }
+
+  public currentProjectId(id: string) {
+    this._projectServices.getCurrentProjectId(id);
   }
 
 }
