@@ -1,4 +1,6 @@
 import { AfterContentInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UserDetails } from 'src/app/core/models/userDetails.model';
 import { ProjectService } from '../services/project.service';
 
@@ -6,42 +8,45 @@ import { ProjectService } from '../services/project.service';
   selector: 'app-task-container',
   templateUrl: './task-container.component.html',
 })
-export class TaskContainerComponent implements OnInit, AfterContentInit {
+export class TaskContainerComponent implements OnInit {
 
   public user: any;
-  public projectIds!: string[];
-  public projectDetails: any[];
-  public currentId !: string;
-  public selectedProjectDetails: UserDetails | undefined
-
+  public projectIds!: number[];
+  public projectDetails!: Observable<UserDetails>;
+  public currentId !: number;
+  public selectedProjectDetails: any
   constructor
     (
-      private _projectServices: ProjectService
+      private _projectServices: ProjectService,
+      private _active: ActivatedRoute
     ) {
-    this.projectDetails = [];
+    // this.projectDetails = [];
     this.selectedProjectDetails = {} as UserDetails;
   }
 
   ngOnInit(): void {
     this.user = localStorage.getItem('user');
     this.projectIds = JSON.parse(this.user).projectId;
-
+    this.currentId = parseInt(this._active.snapshot.params['id'])
     this.getProjectDetailsById();
   }
 
-  ngAfterContentInit(): void {
-    // this.getCurrentId();
-  }
-  // ngAfterViewInit(): void {
-  //   this.getCurrentId();
-  // }
-
   private getProjectDetailsById() {
-    this.projectIds.forEach((id) => {
-      this._projectServices.getProjectById(id).subscribe((res) => {
-        this.projectDetails.push(res);
-      })
-    })
+    if (this.currentId > 0) {
+      this.projectDetails = this._projectServices.getProjectById(this.currentId)
+    }
+    // let a: any = [];
+    // this.projectIds.forEach((id: number) => {
+
+    //   // this.projectDetails = a
+    //   // let currentId = this._active.snapshot.params['id']
+    //   // this.selectedProjectDetails = this.projectDetails.filter((item) => item.id == currentId)
+
+    // })
+    // console.log(this.projectDetails.length,
+    //   "sjdgh");
+    // this.projectDetails 
+    // console.log(this.projectDetails, "container");
     // this.getSelectedProjectDetails(this.projectDetails)
   }
 

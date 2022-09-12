@@ -22,11 +22,17 @@ export class ProjectService {
   }
 
   // get project data from the id
-  public getProjectById(id: string): Observable<UserDetails> {
-    return this._http.get<UserDetails>(`${this._api}/projects/${id}`);
+  public getProjectById(id: any): Observable<UserDetails> {
+    return this._http.get<UserDetails>(`${this._api}/projects/${id}`)
   }
 
   public getCurrentProjectId(id: string) {
     this.currentProjectId.next(id);
   }
+
+  // get all project data
+  public getAllProjects(): Observable<UserDetails[]> {
+    return this._http.get<UserDetails[]>(`${this._api}/projects`)
+  }
 }
+

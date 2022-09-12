@@ -9,8 +9,8 @@ import { ProjectService } from '../services/project.service';
 export class ProjectContainerComponent implements OnInit {
 
   public user: any;
-  public projectIds!: string[];
-  public projectDetails: any[];
+  public projectIds!: number[];
+  public projectDetails: UserDetails[];
 
   constructor
     (
@@ -23,14 +23,13 @@ export class ProjectContainerComponent implements OnInit {
     this.user = localStorage.getItem('user');
     this.projectIds = JSON.parse(this.user).projectId;
 
-    this.getProjectDetailsById();
+    this.getProjectDetailsByUserId();
   }
 
-  private getProjectDetailsById() {
-    this.projectIds.forEach((id) => {
-      this._projectServices.getProjectById(id).subscribe((res) => {
-        this.projectDetails.push(res);
-      })
+  private getProjectDetailsByUserId() {
+    this._projectServices.getAllProjects().subscribe(res => {
+      this.projectDetails = res.filter(res => this.projectIds.includes(res.id))
+      console.log(this.projectDetails);
     })
   }
 

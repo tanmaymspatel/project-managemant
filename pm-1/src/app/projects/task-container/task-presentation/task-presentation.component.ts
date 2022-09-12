@@ -14,14 +14,16 @@ export class TaskPresentationComponent implements OnInit {
 
   public currentId !: string;
   public currentDetails !: any;
-  private _projectDetails!: UserDetails[];
-  public get projectDetails(): UserDetails[] {
+  private _projectDetails!: UserDetails;
+  public get projectDetails(): UserDetails {
     return this._projectDetails;
   }
-  @Input() public set projectDetails(details: UserDetails[]) {
+  @Input() public set projectDetails(details: UserDetails | null) {
     if (details) {
       this._projectDetails = details;
+      console.log(details, " looged ");
     }
+    // this._getCurrentProjectDetails(this._projectDetails);
   }
 
 
@@ -73,17 +75,16 @@ export class TaskPresentationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._getCurrentProjectDetails();
-    this.currentId = (this._activatedRoute.snapshot.params['id'])
+    // this._getCurrentProjectDetails();
 
   }
 
-  private _getCurrentProjectDetails() {
+  private _getCurrentProjectDetails(project: UserDetails) {
     this.currentId = this._activatedRoute.snapshot.params['id']
-    console.log(this.currentId);
-    console.log(this.projectDetails, 'all');
-    this.currentDetails = this.projectDetails.find(item => item.id === this.currentId)
-    console.log(this.currentDetails, 'Current');
+    // let currentDetails = project.find((item: any) => item.id === this.currentId)
+    // console.log(currentDetails);
+    // this.currentDetails = project.filter(item => item.id === this.currentId)
+    // console.log(this.currentDetails, "current");
   }
 
 }
