@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
+  // currently logged in user
   private currentUSer!: any
   constructor(
     private _router: Router
@@ -16,7 +17,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     this.currentUSer = localStorage.getItem('user')
-    if (this.currentUSer && Object.values != undefined) {
+    if (this.currentUSer && Object.values(this.currentUSer) != undefined) {
       return true;
     }
     else {
@@ -24,12 +25,5 @@ export class AuthGuard implements CanActivate {
       return false;
     }
   }
-
-  // canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-  //   if (!this.currentUSer) {
-  //     return false;
-  //   }
-  //   return true;
-  // }
 
 }

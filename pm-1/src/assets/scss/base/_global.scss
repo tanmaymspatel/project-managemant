@@ -69,6 +69,7 @@ body {
 .word-break {
     word-break: break-all;
 }
+
 .fs-xs {
     font-size: 0.75rem;
 }
@@ -85,8 +86,10 @@ body {
     min-height: 100%;
 }
 
-.transition{
+.transition {
     transition: $transition-timing all;
 }
 
-
+.border-radius {
+    border-radius: $border-radius;
+}

@@ -10,12 +10,14 @@
     <div class="px-3 d-flex flex-column justify-content-between overflow-hidden flex-grow-1">
         <div class="flex-grow-1 overflow-y-auto">
             <ul class="nav">
+                <!-- Projects navigation -->
                 <li class="nav-item w-100">
                     <a class="nav-link my-1 cursor-pointer ps-2" routerLink="/projects/home" routerLinkActive="active">
                         <span class="icon icon-dashboard"></span>
                         <span class="ps-2">Projects</span>
                     </a>
                 </li>
+                <!-- Dashboard navigation -->
                 <li class="nav-item w-100" *ngIf="!isProjectPage">
                     <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'dashboard']"
                         routerLinkActive="active">
@@ -23,6 +25,7 @@
                         <span class="ps-2">Dashboard</span>
                     </a>
                 </li>
+                <!-- Task navigation -->
                 <li class="nav-item w-100" *ngIf="!isProjectPage">
                     <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'tasks']"
                         routerLinkActive="active">
@@ -30,6 +33,7 @@
                         <span class="ps-2">Tasks</span>
                     </a>
                 </li>
+                <!-- Team navigation -->
                 <li class="nav-item w-100" *ngIf="!isProjectPage">
                     <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-users"></span>
@@ -41,12 +45,14 @@
 
         <div>
             <ul class="nav pb-3">
+                <!-- Help navigation -->
                 <li class="nav-item w-100">
                     <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-help"></span>
                         <span class="ps-2">Help</span>
                     </a>
                 </li>
+                <!-- Logout navigation -->
                 <li class="nav-item w-100" (click)="logOut()">
                     <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-signout"></span>

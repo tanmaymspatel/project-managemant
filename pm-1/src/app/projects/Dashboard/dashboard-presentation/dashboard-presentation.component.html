@@ -1,2 +1,93 @@
+<!-- Start : first row -->
 
-Dashboard
+<div class="h-100">
+    <div class="row bg-light py-4 border-radius">
+        <div class="col-3 border-end border-secondary border-3">
+            <div class="text-center">
+                <h6 class="m-0">Planning</h6>
+                <p class="m-0">
+                    <span class="icon-completed text-success"></span>
+                </p>
+                <p class="m-0">Done</p>
+            </div>
+        </div>
+        <div class="col-3 border-end border-secondary border-3">
+            <div class="text-center">
+                <h6 class="m-0">Design</h6>
+                <p class="m-0">
+                    <span class="icon-completed text-success"></span>
+                </p>
+                <p class="m-0">Done</p>
+            </div>
+        </div>
+        <div class="col-3 border-end border-secondary border-3">
+            <div class="text-center">
+                <h6 class="m-0">Development</h6>
+                <p class="m-0">67%</p>
+                <p class="m-0">In Progress</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="text-center">
+                <h6 class="m-0 ">Testing</h6>
+                <p class="m-0">
+                    <span class="icon-waiting text-warning"></span>
+                </p>
+                <p class="m-0 ">Waiting</p>
+            </div>
+        </div>
+    </div>
+    <!-- End : first row -->
+    <!-- Start : Second row -->
+    <div class="row g-3 mt-3">
+        <div class="col-3">
+            <div class="card p-3">
+                <p>56</p>
+                <h6 class="m-0">Tasks</h6>
+            </div>
+        </div>
+        <div class="col-9 card">
+            <div class="row p-3">
+                <div class="col-3">
+                    <p>Planning</p>
+                    <p>2</p>
+                </div>
+                <div class="col-3">
+                    <p>Designing</p>
+                    <p>2</p>
+                </div>
+                <div class="col-3">
+                    <p>Development</p>
+                    <p>2</p>
+                </div>
+                <div class="col-3">
+                    <p>Testing</p>
+                    <p>2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End : Second row -->
+    <!-- Start : Third row -->
+    <div class="row g-3 mt-3">
+        <div class="col-9">
+            <div class="card p-3">
+                <h5>Tasks</h5>
+                <!-- no records -->
+                <div class="text-center">
+                    <figure>
+                        <img class="img-fluid" [src]="norecordsImage" alt="no-records-image">
+                    </figure>
+                    <p class="text-primary">No records Found!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div>
+                <div class="card p-3">Total Duration</div>
+                <div class="card p-3 mt-3">Total Cost</div>
+            </div>
+        </div>
+    </div>
+    <!-- End : Third row -->
+</div>

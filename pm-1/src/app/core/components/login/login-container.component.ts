@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserDetails } from '../../models/userDetails.model';
+import { UserDetails } from '../../../shared/models/userDetails.model';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginContainerComponent implements OnInit {
 
+  // To store the list of existing users 
   public userList$: Observable<UserDetails[]>
   constructor(
     private _authService: AuthService,
@@ -20,11 +21,15 @@ export class LoginContainerComponent implements OnInit {
     this.getUSers();
   }
 
+  /**
+   * @name getUSers
+   * @description This method is used to get all the existing users
+   */
   private getUSers() {
     this.userList$ = this._authService.getUsers();
   }
 
-  public currentUser(currentUSer: UserDetails) {
-    this._authService.sendUserData(currentUSer);
-  }
+  // public currentUser(currentUSer: UserDetails) {
+  //   this._authService.sendUserData(currentUSer);
+  // }
 }

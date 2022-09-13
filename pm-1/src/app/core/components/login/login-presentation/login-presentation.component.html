@@ -1,4 +1,5 @@
 <div class="h-100 row">
+    <!-- Start : Background section -->
     <div id="login-image" class="col-md-6 col-lg-7 d-md-flex flex-column justify-content-evenly p-3 d-none">
         <h4 class="text-light p-5">"Operations keeps the lights on, strategy provides a light at the end of the tunnel,
             but project management
@@ -8,6 +9,8 @@
             - Joy Gumz
         </h2>
     </div>
+    <!-- End : Background section -->
+    <!-- Start : Login form section -->
     <div id="login-form" class="col-md-6 col-lg-5 d-flex flex-column justify-content-center">
         <div class="d-flex align-items-center py-4">
             <span class="icon-logo home-logo text-primary"></span>
@@ -22,13 +25,16 @@
             </h5>
         </div>
         <div class="py-4">
+            <!-- Start : Login Form -->
             <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-                <div class="input-group border rounded-3" [ngClass]="{ error: getControls['isInvalid'] }">
+                <div class="input-group border rounded-3">
+                    <!-- Start : Email Input -->
                     <div class="bg-secondary d-flex align-items-center justify-content-center p-2">
                         <span class="icon-email"></span>
                     </div>
                     <input type="email" class="form-control border-0" formControlName="email"
                         placeholder="Enter email address">
+                    <!-- End : Email Input -->
                 </div>
                 <!-- validations -->
                 <div *ngIf=" getControls['email'].touched && getControls['email'].invalid || formSubmitted">
@@ -38,11 +44,13 @@
                     </small>
                 </div>
                 <div class="mt-3 input-group border rounded-3">
+                    <!-- Start : Password Input -->
                     <div class="bg-secondary d-flex align-items-center justify-content-center p-2">
                         <span class="icon-password"></span>
                     </div>
                     <input type="password" class="form-control border-0" formControlName="password"
                         placeholder="Enter password">
+                    <!-- End : Password Input -->
                 </div>
                 <!-- validations -->
                 <div *ngIf="getControls['password'].touched && getControls['password'].invalid || formSubmitted">
@@ -53,6 +61,8 @@
                 </div>
                 <button type="submit" class="mt-4 btn btn-primary text-light">Log in</button>
             </form>
+            <!-- End : Login Form -->
         </div>
     </div>
+    <!-- Start : Login form section -->
 </div>

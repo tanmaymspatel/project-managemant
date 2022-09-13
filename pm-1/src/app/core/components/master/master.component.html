@@ -1,13 +1,19 @@
- <div class="h-100 d-flex">
+<div class="h-100 d-flex">
+    <!-- Start : Side bar -->
     <aside id="sidebar" class="h-100 overflow-hidden">
-        <app-sidebar></app-sidebar>
-    </aside> 
+        <app-sidebar [user]="currentUser"></app-sidebar>
+    </aside>
+    <!-- End : Side bar -->
     <div class="flex-grow-1">
+        <!-- Start : Header -->
         <header id="header" class="px-4">
-            <app-header [user]="currentUser" ></app-header>
+            <app-header [user]="currentUser"></app-header>
         </header>
+        <!-- End : Header -->
+        <!-- Start : main section -->
         <main class="h-100 bg-secondary px-5 py-4 overflow-y-auto">
             <router-outlet></router-outlet>
         </main>
+        <!-- End : main section -->
     </div>
 </div>

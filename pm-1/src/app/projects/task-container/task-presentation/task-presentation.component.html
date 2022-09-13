@@ -1,4 +1,3 @@
-{{projectDetails | json}}
 <div class="text-end py-3 mb-3">
     <button class="btn btn-primary">
         <span>+</span>
@@ -9,51 +8,51 @@
     <div class="col-4">
         <h6 class="list-heading pb-3 border-primary">
             <span>To Do</span>
-            <!-- <span class="list-count ms-4">{{todoList.length}}</span>  -->
+            <span class=" ms-3">({{todoLength}})</span>
         </h6>
-        <!-- <div class="mt-4">
-            <div *ngFor="let task of todoList" class="card cursor-pointer px-3 py-2 mt-2">
+        <div class="mt-4">
+            <div *ngFor="let task of todoList" class="card cursor-pointer transition px-3 py-2 mt-2">
                 <p>{{task?.name}}</p>
                 <div class="progress-bar">
-                    <p class="text-end mb-0">{{task?.completedMiniTasks.length}}/{{task?.totalMiniTasks.length}}</p>
+                    <p class="text-end mb-0">{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</p>
                     <p class="mb-0">-------------------------</p>
                 </div>
                 <p>{{task?.priority}}</p>
             </div>
-        </div> -->
+        </div>
 
     </div>
     <div class="col-4">
         <h6 class="list-heading pb-3 border-info">
             <span>Active Tasks</span>
-            <!-- <span class="list-count ms-4">{{activeTaskList.length}}</span> -->
+            <span class=" ms-3">({{activeTaskLength}})</span>
         </h6>
-        <!-- <div class="mt-4">
-            <div *ngFor="let task of activeTaskList" class="card cursor-pointer px-3 py-2 mt-2">
+        <div class="mt-4">
+            <div *ngFor="let task of activeTaskList" class="card cursor-pointer transition px-3 py-2 mt-2">
                 <p>{{task?.name}}</p>
                 <div class="progress-bar">
-                    <p class="text-end mb-0">{{task?.completedMiniTasks.length}}/{{task?.totalMiniTasks.length}}</p>
+                    <p class="text-end mb-0">{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</p>
                     <p class="mb-0">-------------------------</p>
                 </div>
                 <p>{{task?.priority}}</p>
             </div>
-        </div> -->
+        </div>
     </div>
     <div class="col-4">
         <h6 class="list-heading pb-3 border-success">
             <span>Done Tasks</span>
-            <!-- <span class="list-count ms-4">{{doneTaskList.length}}</span> -->
+            <span class=" ms-3">({{completedTaskLength}})</span>
         </h6>
-        <!-- <div class="mt-4">
-            <div *ngFor="let task of doneTaskList" class="card cursor-pointer px-3 py-2 mt-2">
+        <div class="mt-4">
+            <div *ngFor="let task of completedTaskList" class="card cursor-pointer transition px-3 py-2 mt-2">
                 <p>{{task?.name}}</p>
                 <div class="progress-bar">
-                    <p class="text-end mb-0">{{task?.completedMiniTasks.length}}/{{task?.totalMiniTasks.length}}</p>
+                    <p class="text-end mb-0">{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</p>
                     <p class="mb-0">-------------------------</p>
                 </div>
                 <p>{{task?.priority}}</p>
             </div>
-        </div> -->
+        </div>
     </div>
 
 </div>

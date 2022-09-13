@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDetails } from 'src/app/core/models/userDetails.model';
+import { UserDetails } from 'src/app/shared/models/userDetails.model';
 import { ProjectService } from '../services/project.service';
 
 @Component({
@@ -8,8 +8,11 @@ import { ProjectService } from '../services/project.service';
 })
 export class ProjectContainerComponent implements OnInit {
 
+  // logged in user
   public user: any;
+  // project ids of the logged in user is associated with
   public projectIds!: number[];
+  // all the project deails of the logged in user
   public projectDetails: UserDetails[];
 
   constructor
@@ -26,14 +29,23 @@ export class ProjectContainerComponent implements OnInit {
     this.getProjectDetailsByUserId();
   }
 
+  /**
+   * @name getProjectDetailsByUserId
+   * @description Used to filter the details of projects of logged in user
+   */
   private getProjectDetailsByUserId() {
-    this._projectServices.getAllProjects().subscribe(res => {
-      this.projectDetails = res.filter(res => this.projectIds.includes(res.id))
+    this._projectServices.getAllProjects().subscribe(projects => {
+      this.projectDetails = projects.filter(res => this.projectIds.includes(res.id))
       console.log(this.projectDetails);
     })
   }
 
-  public currentProjectId(id: string) {
+  /**
+   * @name currentProjectId
+   * @description Used to get the project id
+   * @param id - id of project on which user has clicked 
+   */
+  public currentProjectId(id: number) {
     this._projectServices.getCurrentProjectId(id);
   }
 

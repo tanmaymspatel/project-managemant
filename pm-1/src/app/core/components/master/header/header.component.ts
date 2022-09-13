@@ -1,21 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserDetails } from 'src/app/core/models/userDetails.model';
+import { UserDetails } from 'src/app/shared/models/userDetails.model';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
+  // get detalis of logged in user from the master component
   @Input() public user!: UserDetails;
-  public pageTitle : string;
+  // Title of the page 
+  public pageTitle: string;
 
-  constructor() 
-  { 
+  constructor() {
     this.pageTitle = "Projects";
   }
 
-  ngOnInit(): void {
-  }
 
 }
