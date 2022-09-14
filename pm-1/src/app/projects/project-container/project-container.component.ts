@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDetails } from 'src/app/shared/models/userDetails.model';
+import { ProjectDetails } from '../models/project-details.model';
 import { ProjectService } from '../services/project.service';
 
 @Component({
@@ -11,9 +12,9 @@ export class ProjectContainerComponent implements OnInit {
   // logged in user
   public user: any;
   // project ids of the logged in user is associated with
-  public projectIds!: number[];
+  public projectIds: number[] = [];
   // all the project deails of the logged in user
-  public projectDetails: UserDetails[];
+  public projectDetails: ProjectDetails[];
 
   constructor
     (
@@ -35,8 +36,8 @@ export class ProjectContainerComponent implements OnInit {
    */
   private getProjectDetailsByUserId() {
     this._projectServices.getAllProjects().subscribe(projects => {
-      this.projectDetails = projects.filter(res => this.projectIds.includes(res.id))
-      console.log(this.projectDetails);
+      this.projectDetails = projects.filter((res: any) => this.projectIds.includes(res.id))
+      // console.log(this.projectDetails);
     })
   }
 
@@ -49,4 +50,12 @@ export class ProjectContainerComponent implements OnInit {
     this._projectServices.getCurrentProjectId(id);
   }
 
+  /**
+   * @name addProjectDetails
+   * @description - Used to add new project details, which are submitted bu form
+   * @param newProjectDetails - project details, which are to be added
+   */
+  public addProjectDetails(newProjectDetails: ProjectDetails) {
+    this._projectServices.addProject(newProjectDetails).subscribe(res => alert("Project is Added"))
+  }
 }

@@ -2,6 +2,7 @@ import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { observable, Observable } from 'rxjs';
 import { UserDetails } from 'src/app/shared/models/userDetails.model';
+import { ProjectDetails } from '../models/project-details.model';
 import { ProjectService } from '../services/project.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class TaskContainerComponent implements OnInit {
   // project ids of respective users
   public projectIds!: number[];
   // details of current project
-  public projectDetails: Observable<UserDetails>;
+  public projectDetails: Observable<ProjectDetails>;
   // id of current project
   public currentId !: number;
   constructor

@@ -1,11 +1,11 @@
 export class UserDetails {
-    public id: number;
+    public id?: number;
     public name: string;
     public lastName: string;
     public email: string;
     public password: string;
     public profilePicture: string;
-    public projectId?: number[];
+    public projectId: number[];
 
     constructor(
         id: number,
@@ -14,12 +14,14 @@ export class UserDetails {
         email: string,
         password: string,
         profilePicture: string,
+        projectId: number[]
     ) {
         this.id = id;
         this.name = name;
         this.lastName = lastName,
             this.email = email,
             this.password = password,
-            this.profilePicture = profilePicture
+            this.profilePicture = profilePicture,
+            this.projectId = projectId
     }
 }

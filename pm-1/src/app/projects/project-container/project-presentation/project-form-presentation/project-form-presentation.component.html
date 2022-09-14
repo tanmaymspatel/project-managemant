@@ -1,0 +1,29 @@
+<div class="bg-light overlay-form h-100">
+    <form class="p-5" [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+        <!-- Start : project name -->
+        <div class="form-group py-3">
+            <label class="mb-1" for="projectName">Project Name</label>
+            <input type="text" formControlName="projectName" class="form-control" id="projectName"
+                placeholder="Enter project Name">
+        </div>
+        <!-- End : project name -->
+        <!-- Start : project description -->
+        <div class="form-group py-3">
+            <label class="mb-1" for="description">Description</label>
+            <textarea formControlName="description" class="form-control" id="description" rows="3"
+                placeholder="Enter some description"></textarea>
+        </div>
+        <!-- End : project description -->
+        <!-- Start : project duration -->
+        <div class="form-group py-3">
+            <label class="mb-1" for="duration">Duration</label>
+            <input type="text" formControlName="duration" class="form-control" id="duration"
+                placeholder="Enter duration of project">
+        </div>
+        <!-- End : project duration -->
+        <div class="text-end mt-3">
+            <button type="button" class="btn btn-danger text-light">Cancel</button>
+            <button type="submit" class="btn btn-success text-light ms-2">Submit</button>
+        </div>
+    </form>
+</div>

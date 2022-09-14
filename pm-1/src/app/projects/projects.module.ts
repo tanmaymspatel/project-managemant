@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { OverlayModule } from "@angular/cdk/overlay";
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
@@ -11,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProjectService } from './services/project.service';
 import { TaskContainerComponent } from './task-container/task-container.component';
 import { TaskPresentationComponent } from './task-container/task-presentation/task-presentation.component';
+import { ProjectFormPresentationComponent } from './project-container/project-presentation/project-form-presentation/project-form-presentation.component';
 
 
 @NgModule({
@@ -21,17 +23,19 @@ import { TaskPresentationComponent } from './task-container/task-presentation/ta
     DashboardComponent,
     DashboardPresentationComponent,
     TaskContainerComponent,
-    TaskPresentationComponent
+    TaskPresentationComponent,
+    ProjectFormPresentationComponent
   ],
   imports: [
     CommonModule,
     ProjectsRoutingModule,
-    SharedModule
+    SharedModule,
+    OverlayModule
   ],
-  exports:[
+  exports: [
     ProjectPresentationComponent
-  ], 
-  providers:[
+  ],
+  providers: [
     ProjectService
   ]
 })

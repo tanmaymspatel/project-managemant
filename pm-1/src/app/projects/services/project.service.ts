@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserDetails } from 'src/app/shared/models/userDetails.model';
 import { environment } from 'src/environments/environment';
+import { ProjectDetails } from '../models/project-details.model';
 
 @Injectable()
 export class ProjectService {
@@ -29,8 +30,12 @@ export class ProjectService {
    * @param id - id of the project
    * @returns - observable of project details of respective id
    */
-  public getProjectById(id: number): Observable<UserDetails> {
-    return this._http.get<UserDetails>(`${this._api}/projects/${id}`)
+  public getProjectById(id: number): Observable<ProjectDetails> {
+    return this._http.get<ProjectDetails>(`${this._api}/projects/${id}`)
+  }
+
+  public addProject(formData: ProjectDetails): Observable<ProjectDetails> {
+    return this._http.post<ProjectDetails>(`${this._api}/projects`, formData)
   }
 
   /**
@@ -47,8 +52,8 @@ export class ProjectService {
    * @description Used to get all the project data from the data base
    * @returns Array of observable of project details
    */
-  public getAllProjects(): Observable<UserDetails[]> {
-    return this._http.get<UserDetails[]>(`${this._api}/projects`)
+  public getAllProjects(): Observable<ProjectDetails[]> {
+    return this._http.get<ProjectDetails[]>(`${this._api}/projects`)
   }
 }
 
