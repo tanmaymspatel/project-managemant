@@ -16,11 +16,14 @@ export class ProjectContainerComponent implements OnInit {
   // all the project deails of the logged in user
   public projectDetails: ProjectDetails[];
 
+  public newUser!: UserDetails;
+
   constructor
     (
       private _projectServices: ProjectService
     ) {
     this.projectDetails = [];
+
   }
 
   ngOnInit(): void {
@@ -28,6 +31,7 @@ export class ProjectContainerComponent implements OnInit {
     this.projectIds = JSON.parse(this.user).projectId;
 
     this.getProjectDetailsByUserId();
+
   }
 
   /**
@@ -37,14 +41,13 @@ export class ProjectContainerComponent implements OnInit {
   private getProjectDetailsByUserId() {
     this._projectServices.getAllProjects().subscribe(projects => {
       this.projectDetails = projects.filter((res: any) => this.projectIds.includes(res.id))
-      // console.log(this.projectDetails);
     })
   }
 
   /**
    * @name currentProjectId
    * @description Used to get the project id
-   * @param id - id of project on which user has clicked 
+   * @param id  id of project on which user has clicked 
    */
   public currentProjectId(id: number) {
     this._projectServices.getCurrentProjectId(id);
@@ -52,10 +55,66 @@ export class ProjectContainerComponent implements OnInit {
 
   /**
    * @name addProjectDetails
-   * @description - Used to add new project details, which are submitted bu form
+   * @description  1 - Adds new project details which are submitted through form
+   * @description  2 - Adds newly added project to the project list of the logged in user
    * @param newProjectDetails - project details, which are to be added
    */
   public addProjectDetails(newProjectDetails: ProjectDetails) {
-    this._projectServices.addProject(newProjectDetails).subscribe(res => alert("Project is Added"))
+    this._projectServices.addProject(newProjectDetails).subscribe((res: any) => {
+      this.projectIds.push(res.id);
+      this.modifyLoggedInUser(this.projectIds);
+      this.getProjectDetailsByUserId();
+    })
+  }
+
+  /**
+   * @name deleteProject
+   * @description  deletes a project by particular id
+   * @param id  of which project is to be deleted
+   */
+  public deleteProject(id: number) {
+    // debugger
+    // if (id) {
+    //   this.projectIds = this.projectIds.filter(projId => projId !== id)
+    //   // this.modifyLoggedInUser(this.projectIds);
+    // }
+
+    // this._projectServices.deleteProject(id).subscribe((res: any) => {
+    //   // this.projectIds.splice((this.projectIds.indexOf(id)), 1);
+    //   debugger
+    //   // const index = this.projectIds.indexOf(id);
+    //   // if (index > -1) { // only splice array when item is found
+    //   //   this.projectIds.splice(index, 1); // 2nd parameter means remove one item only
+    //   //   console.log("project ids after delete is performed", this.projectIds);
+    //   // }
+
+    //   console.log(res);
+    //   this.getProjectDetailsByUserId();
+
+
+    // })
+  }
+
+
+  public editProjectDetails(editData: ProjectDetails) {
+    console.log(editData);
+    // this._projectServices.editProject(editData).subscribe(res => {
+    //   alert("data edited");
+    // })
+  }
+
+  /**
+   * @name modifyLoggedInUser
+   * @description  modifies logged in user's projects according to action 
+   * @param projectIds  project ids of logged in user which are added or deleted 
+   */
+  private modifyLoggedInUser(projectIds: number[]) {
+    this.newUser = JSON.parse(this.user); // created a copy of logged in user
+    this.newUser.projectId = projectIds;
+    localStorage.setItem('user', JSON.stringify(this.newUser));
+    // console.log(this.newUser);
+    this._projectServices.editUser(this.newUser).subscribe((res) => {
+      // console.log(res);
+    })
   }
 }

@@ -10,12 +10,19 @@ export class ProjectFormPresenterService {
   private _formData: Subject<ProjectDetails>;
   public formData$: Observable<ProjectDetails>;
 
+  private _editData: Subject<ProjectDetails>;
+  public editData$: Observable<ProjectDetails>;
+
   constructor(
     private _fb: FormBuilder
   ) {
     this._formData = new Subject();
     this.formData$ = new Observable();
     this.formData$ = this._formData.asObservable()
+
+    this._editData = new Subject();
+    this.editData$ = new Observable();
+    this.editData$ = this._editData.asObservable()
   }
   /**
  * @name buildProjectForm
@@ -29,10 +36,11 @@ export class ProjectFormPresenterService {
       duration: ['', [Validators.required]]
     })
   }
-  public onSubmit(newData: FormGroup) {
-    if (newData.valid) {
-      this._formData.next(newData.value);
+  public onSubmit(projectData: FormGroup) {
+    if (projectData.valid) {
+      this._formData.next(projectData.value);
     }
+
   }
 
 }

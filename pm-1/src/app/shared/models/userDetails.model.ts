@@ -1,5 +1,5 @@
 export class UserDetails {
-    public id?: number;
+    public id: number;
     public name: string;
     public lastName: string;
     public email: string;
@@ -25,3 +25,19 @@ export class UserDetails {
             this.projectId = projectId
     }
 }
+/** 
+{
+    "id": 1,
+    "name": "Tanmay",
+    "lastName": "Patel",
+    "email": "tanmay@gmail.com",
+    "password": "Admin@123",
+    "profilePicture": "../../../../../assets/images/user-image.png",
+    "projectId": [
+      1,
+      2,
+      3
+    ]
+  }
+
+  */

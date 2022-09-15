@@ -6,8 +6,9 @@
 </div>
 <div class="row g-4">
     <!-- Start : Project card -->
-    <div *ngFor="let projectDetails of projectDetails" class="col-4">
-        <a class="card bg-light p-4 cursor-pointer transition" (click)="onProjectClick(projectDetails)">
+    <div *ngFor="let projectDetails of projectDetails" class="col-4 project-card position-relative">
+        <a class="card bg-light p-4 cursor-pointer transition"
+            [routerLink]="['/projects',projectDetails.id,'dashboard']" (click)="onProjectClick(projectDetails)">
             <h4 class="pb-2">{{projectDetails?.projectName}}</h4>
             <p>{{projectDetails?.description}}
             </p>
@@ -16,6 +17,11 @@
                 <span class="ps-2 project-duration">{{projectDetails?.duration}}</span>
             </p>
         </a>
+        <div class="project-actions transition position-absolute">
+            <span class="cursor-pointer icon icon-edit text-primary" (click)="onEdit(projectDetails)"></span>
+            <span class="cursor-pointer icon icon-delete text-danger ms-2"
+                (click)="deleteProject(projectDetails.id)"></span>
+        </div>
     </div>
     <!-- End : Project card -->
 </div>

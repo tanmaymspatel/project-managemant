@@ -4,27 +4,15 @@
       "id": 1,
       "name": "Tanmay",
       "lastName": "Patel",
-      "email": "tanmay.patel@1rivet.com",
+      "email": "tanmay@gmail.com",
       "password": "Admin@123",
-      "profilePicture": "../../../../assets/images/user-image.png",
+      "profilePicture": "../../../../../assets/images/user-image.png",
       "projectId": [
         1,
         2,
         3,
-        4
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Mehul",
-      "lastName": "Patel",
-      "email": "mehul.patel@1rivet.com",
-      "password": "Admin@123",
-      "profilePicture": "../../../../assets/images/user-image.png",
-      "projectId": [
-        1,
-        3,
-        4
+        20,
+        21
       ]
     }
   ],
@@ -755,10 +743,106 @@
       ]
     },
     {
-      "projectName": "project 5",
-      "description": "projectDetails",
-      "duration": "1 year",
+      "projectName": "aaaa",
+      "description": "aaaa",
+      "duration": "aaa",
       "id": 5
+    },
+    {
+      "projectName": "aaa",
+      "description": "aaaa",
+      "duration": "aaa",
+      "id": 6
+    },
+    {
+      "projectName": "scscs",
+      "description": "cscsccsc",
+      "duration": "scscsscscscsc",
+      "id": 7
+    },
+    {
+      "projectName": "vere",
+      "description": "patel ",
+      "duration": "klaldabdlbkad",
+      "id": 8
+    },
+    {
+      "projectName": "veer",
+      "description": "veererer",
+      "duration": "asddasda",
+      "id": 9
+    },
+    {
+      "projectName": "sasas",
+      "description": "asasaas",
+      "duration": "asasa",
+      "id": 10
+    },
+    {
+      "projectName": "asas",
+      "description": "asasasas",
+      "duration": "asasasa",
+      "id": 11
+    },
+    {
+      "projectName": "asas",
+      "description": "aasas",
+      "duration": "asasas",
+      "id": 12
+    },
+    {
+      "projectName": "asas",
+      "description": "asasa",
+      "duration": "asas",
+      "id": 13
+    },
+    {
+      "projectName": "asas",
+      "description": "asasas",
+      "duration": "asasas",
+      "id": 14
+    },
+    {
+      "projectName": "asasa",
+      "description": "asasas",
+      "duration": "asasa",
+      "id": 15
+    },
+    {
+      "projectName": "asas",
+      "description": "asasas",
+      "duration": "asasas",
+      "id": 16
+    },
+    {
+      "projectName": "asas",
+      "description": "asasa",
+      "duration": "asas",
+      "id": 17
+    },
+    {
+      "projectName": "fgnfgn",
+      "description": "fgnfgnfgnfg",
+      "duration": "nfgnfgnfgnfg",
+      "id": 18
+    },
+    {
+      "projectName": "csdcsdc",
+      "description": "dcdsccsdc",
+      "duration": "sdcdscsdc",
+      "id": 19
+    },
+    {
+      "projectName": "fcdscdsc",
+      "description": "dscsdcscsdcs",
+      "duration": "csdcsdcsdcsdcsdcsdcsdcsdc",
+      "id": 20
+    },
+    {
+      "projectName": "fcdscdsc project",
+      "description": "dscsdcscsdcs",
+      "duration": "csdcsdcsdcsdcsdcsdcsdcsdc",
+      "id": 21
     }
   ]
 }

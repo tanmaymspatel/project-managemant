@@ -55,5 +55,27 @@ export class ProjectService {
   public getAllProjects(): Observable<ProjectDetails[]> {
     return this._http.get<ProjectDetails[]>(`${this._api}/projects`)
   }
+
+  /**
+   * @name editUser
+   * @description Used to edit the details of the user
+   */
+  editUser(user: UserDetails): Observable<UserDetails> {
+    return this._http.put<UserDetails>(`${this._api}/users/${user.id}`, user);
+  }
+
+  /**
+   * @name deleteProject
+   * @description - Used to delete the project of particular id 
+   * @param id - of the project which is to be deleted
+   */
+  deleteProject(id: number) {
+    return this._http.delete(`${this._api}/projects/${id}`);
+  }
+
+
+  editProject(editData: ProjectDetails): Observable<ProjectDetails> {
+    return this._http.put<ProjectDetails>(`${this._api}/projects/${editData.id}`, editData);
+  }
 }
 
