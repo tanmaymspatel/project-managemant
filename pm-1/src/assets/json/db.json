@@ -9,11 +9,38 @@
       "profilePicture": "../../../../../assets/images/user-image.png",
       "projectId": [
         1,
-        2,
-        3,
-        20,
-        21
+        2
       ]
+    },
+    {
+      "id": 2,
+      "name": "Tanmay",
+      "lastName": "Patel",
+      "email": "tanmay@gmail.com",
+      "password": "Admin@123",
+      "profilePicture": "../../../../../assets/images/user-image.png",
+      "projectId": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Tanmay",
+      "lastName": "Patel",
+      "email": "tanmay@gmail.com",
+      "password": "Admin@123",
+      "profilePicture": "../../../../../assets/images/user-image.png",
+      "projectId": [
+        1,
+        2
+      ]
+    },
+    {
+      "projectName": "edfewf",
+      "description": "efwefwef",
+      "duration": "efwfwfwfwefwefwefewfwef",
+      "id": 4
     }
   ],
   "projects": [
@@ -21,7 +48,7 @@
       "id": 1,
       "projectName": "Project 1",
       "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
-      "duration": "6 months",
+      "duration": "8 months",
       "todoList": [
         {
           "id": 1,
@@ -207,192 +234,6 @@
       "id": 2,
       "projectName": "Project 2",
       "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
-      "duration": "8 months",
-      "todoList": [
-        {
-          "id": 1,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        },
-        {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        }
-      ],
-      "activeTaskList": [
-        {
-          "id": 1,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        },
-        {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        }
-      ],
-      "completedTaskList": [
-        {
-          "id": 1,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        },
-        {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "projectName": "Project 3",
-      "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
       "duration": "11 months",
       "todoList": [
         {
@@ -557,292 +398,6 @@
           "priority": "low"
         }
       ]
-    },
-    {
-      "id": 4,
-      "projectName": "Project 4",
-      "description": "A project description is a high-level overview of why you are doing a project. The document explains a project's objectives and its essential qualities. Think of it as the elevator pitch that focuses on what and why without delving into how. ",
-      "duration": "3 months",
-      "todoList": [
-        {
-          "id": 1,
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        },
-        {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        }
-      ],
-      "activeTaskList": [
-        {
-          "id": 1,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        },
-        {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        }
-      ],
-      "completedTaskList": [
-        {
-          "id": 1,
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        },
-        {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        }
-      ]
-    },
-    {
-      "projectName": "aaaa",
-      "description": "aaaa",
-      "duration": "aaa",
-      "id": 5
-    },
-    {
-      "projectName": "aaa",
-      "description": "aaaa",
-      "duration": "aaa",
-      "id": 6
-    },
-    {
-      "projectName": "scscs",
-      "description": "cscsccsc",
-      "duration": "scscsscscscsc",
-      "id": 7
-    },
-    {
-      "projectName": "vere",
-      "description": "patel ",
-      "duration": "klaldabdlbkad",
-      "id": 8
-    },
-    {
-      "projectName": "veer",
-      "description": "veererer",
-      "duration": "asddasda",
-      "id": 9
-    },
-    {
-      "projectName": "sasas",
-      "description": "asasaas",
-      "duration": "asasa",
-      "id": 10
-    },
-    {
-      "projectName": "asas",
-      "description": "asasasas",
-      "duration": "asasasa",
-      "id": 11
-    },
-    {
-      "projectName": "asas",
-      "description": "aasas",
-      "duration": "asasas",
-      "id": 12
-    },
-    {
-      "projectName": "asas",
-      "description": "asasa",
-      "duration": "asas",
-      "id": 13
-    },
-    {
-      "projectName": "asas",
-      "description": "asasas",
-      "duration": "asasas",
-      "id": 14
-    },
-    {
-      "projectName": "asasa",
-      "description": "asasas",
-      "duration": "asasa",
-      "id": 15
-    },
-    {
-      "projectName": "asas",
-      "description": "asasas",
-      "duration": "asasas",
-      "id": 16
-    },
-    {
-      "projectName": "asas",
-      "description": "asasa",
-      "duration": "asas",
-      "id": 17
-    },
-    {
-      "projectName": "fgnfgn",
-      "description": "fgnfgnfgnfg",
-      "duration": "nfgnfgnfgnfg",
-      "id": 18
-    },
-    {
-      "projectName": "csdcsdc",
-      "description": "dcdsccsdc",
-      "duration": "sdcdscsdc",
-      "id": 19
-    },
-    {
-      "projectName": "fcdscdsc",
-      "description": "dscsdcscsdcs",
-      "duration": "csdcsdcsdcsdcsdcsdcsdcsdc",
-      "id": 20
-    },
-    {
-      "projectName": "fcdscdsc project",
-      "description": "dscsdcscsdcs",
-      "duration": "csdcsdcsdcsdcsdcsdcsdcsdc",
-      "id": 21
     }
   ]
 }

@@ -1,5 +1,9 @@
 <div class="bg-light overlay-form h-100">
-    {{formTitle}}
+    <div class="d-flex justify-content-center align-items-center py-5">
+        <h2>
+            {{formTitle}}
+        </h2>
+    </div>
     <form class="p-5" [formGroup]="projectForm" (ngSubmit)="onSubmit()">
         <!-- Start : project name -->
         <div class="form-group py-3">
@@ -23,7 +27,7 @@
         </div>
         <!-- End : project duration -->
         <div class="text-end mt-3">
-            <button type="button" class="btn btn-danger text-light">Cancel</button>
+            <button type="button" class="btn btn-danger text-light" (click)="onCancel()">Cancel</button>
             <button type="submit" class="btn btn-success text-light ms-2">Submit</button>
         </div>
     </form>

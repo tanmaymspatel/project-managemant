@@ -8,7 +8,6 @@ export class ProjectDetails {
     public completedTaskList?: TaskList[];
 
     constructor(
-        id: number,
         projectName: string,
         description: string,
         duration: string,
@@ -16,7 +15,6 @@ export class ProjectDetails {
         activeTaskList: TaskList[],
         completedTaskList: TaskList[],
     ) {
-        this.id = id;
         this.projectName = projectName;
         this.description = description;
         this.duration = duration;

@@ -1,6 +1,6 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { Injectable, ɵisObservable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Subject } from 'rxjs/internal/Subject';
 import { ProjectDetails } from '../../models/project-details.model';
@@ -9,10 +9,12 @@ import { ProjectFormPresentationComponent } from '../project-presentation/projec
 @Injectable()
 export class ProjectPresenterService {
 
-  private _formData: Subject<ProjectDetails>
   public formData$: Observable<ProjectDetails>
-  private _editData: Subject<ProjectDetails>
   public editData$: Observable<ProjectDetails>
+
+  private _formData: Subject<ProjectDetails>
+  private _editData: Subject<ProjectDetails>
+
 
   constructor(
     private _overlay: Overlay,
@@ -27,7 +29,7 @@ export class ProjectPresenterService {
     this.editData$ = this._editData.asObservable();
   }
 
-  public overlayForm(editDetails?: ProjectDetails) {
+  public overlayForm(editDetails?: ProjectDetails, editId?: number) {
     const OverlayRef = this._overlay.create({
       hasBackdrop: true,
       positionStrategy: this._overlay.position().global().right(),
@@ -38,20 +40,27 @@ export class ProjectPresenterService {
 
     OverlayRef.backdropClick().subscribe(() => OverlayRef.detach())
 
+    // data sent to form presentation to patch
     componentRef.instance.editData = editDetails as ProjectDetails;
 
-    // new form data to the presentation
-    componentRef.instance.addProjectDetails.subscribe(
-      data => {
-        this._formData.next(data);
-        OverlayRef.detach();
-      })
+    //on clicking on cancel button
+    componentRef.instance.cancel.subscribe(() => {
+      OverlayRef.detach();
+    })
 
-    //edit
-    componentRef.instance.editProjectDetails.subscribe(data => {
-      console.log("overlay", data);
+    // new form data from the form on submit
+    componentRef.instance.addProjectDetails.subscribe((data: ProjectDetails) => {
+      this._formData.next(data);
+      OverlayRef.detach();
+    })
+
+    //edit data from form on submit
+    componentRef.instance.editProjectDetails.subscribe((data: ProjectDetails) => {
+      data.id = editId;
       this._editData.next(data);
       OverlayRef.detach();
     })
   }
+
+
 }

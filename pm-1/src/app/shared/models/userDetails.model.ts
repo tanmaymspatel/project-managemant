@@ -27,17 +27,43 @@ export class UserDetails {
 }
 /** 
 {
-    "id": 1,
-    "name": "Tanmay",
-    "lastName": "Patel",
-    "email": "tanmay@gmail.com",
-    "password": "Admin@123",
-    "profilePicture": "../../../../../assets/images/user-image.png",
-    "projectId": [
-      1,
-      2,
-      3
-    ]
-  }
+      "id": 1,
+      "name": "Tanmay",
+      "lastName": "Patel",
+      "email": "tanmay@gmail.com",
+      "password": "Admin@123",
+      "profilePicture": "../../../../../assets/images/user-image.png",
+      "projectId": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Tanmay",
+      "lastName": "Patel",
+      "email": "tanmay@gmail.com",
+      "password": "Admin@123",
+      "profilePicture": "../../../../../assets/images/user-image.png",
+      "projectId": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Tanmay",
+      "lastName": "Patel",
+      "email": "tanmay@gmail.com",
+      "password": "Admin@123",
+      "profilePicture": "../../../../../assets/images/user-image.png",
+      "projectId": [
+        1,
+        2,
+        3
+      ]
+    }
 
   */

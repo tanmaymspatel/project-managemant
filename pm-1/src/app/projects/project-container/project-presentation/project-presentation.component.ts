@@ -25,7 +25,9 @@ export class ProjectPresentationComponent implements OnInit {
 
   // id of the project on which the user has clicked
   @Output() public currentProjectId: EventEmitter<number> = new EventEmitter();
+  // new project data 
   @Output() public addProjectDetails: EventEmitter<ProjectDetails> = new EventEmitter();
+  // edited project data
   @Output() public editProjectDetails: EventEmitter<ProjectDetails> = new EventEmitter();
   // delete id by clicking on project delete button
   @Output() public delete: EventEmitter<number> = new EventEmitter();
@@ -45,12 +47,7 @@ export class ProjectPresentationComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this._projectPresenterService.formData$.subscribe(res => this.addProjectDetails.emit(res));
-    this._projectPresenterService.editData$.subscribe(res => {
-      console.log("presentation", res);
-
-      this.editProjectDetails.emit(res)
-    });
+    this._emitData();
   }
 
   /**
@@ -63,9 +60,9 @@ export class ProjectPresentationComponent implements OnInit {
   }
 
 
-  onEdit(projectDetails: ProjectDetails) {
+  public onEdit(projectDetails: ProjectDetails) {
     this.userId = projectDetails.id;
-    this._projectPresenterService.overlayForm(projectDetails)
+    this._projectPresenterService.overlayForm(projectDetails, this.userId);
   }
 
   /**
@@ -76,12 +73,17 @@ export class ProjectPresentationComponent implements OnInit {
     this._projectPresenterService.overlayForm();
   }
 
-  // public editProject(projectDetails: ProjectDetails) {
-  //   console.log("Edit is clicked");
-  // }
 
-  public deleteProject(id?: number) {
-    this.delete.emit(id);
+
+
+  /**
+   * @name _emitData
+   * @description used to emit new project details, edited project details and id of edited project to the container 
+   */
+  private _emitData() {
+    this._projectPresenterService.formData$.subscribe(res => this.addProjectDetails.emit(res));
+    this._projectPresenterService.editData$.subscribe(res => {
+      this.editProjectDetails.emit(res);
+    });
   }
-
 }
