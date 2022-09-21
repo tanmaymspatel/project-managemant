@@ -55,7 +55,18 @@
 }
 
 
+// task container
+.card {
+    .card-actions {
+        display: none;
+    }
 
+    &:hover {
+        .card-actions {
+            display: block;
+        }
+    }
+}
 
 
 

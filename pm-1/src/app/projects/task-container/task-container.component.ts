@@ -11,6 +11,9 @@ import { ProjectService } from '../services/project.service';
 })
 export class TaskContainerComponent implements OnInit {
 
+  public statusList$: Observable<any>
+  public priorityList$: Observable<any>
+
   // logged in user
   public user: any;
   // project ids of respective users
@@ -25,10 +28,14 @@ export class TaskContainerComponent implements OnInit {
       private _active: ActivatedRoute
     ) {
     this.projectDetails = new Observable();
+    this.statusList$ = new Observable();
+    this.priorityList$ = new Observable();
   }
 
   ngOnInit(): void {
     this.getProjectDetailsById();
+    this.getStatusData();
+    this.getPriorityData();
   }
 
   /**
@@ -42,5 +49,22 @@ export class TaskContainerComponent implements OnInit {
     if (this.currentId) {
       this.projectDetails = this._projectServices.getProjectById(this.currentId)
     }
+  }
+
+  private getStatusData() {
+    this.statusList$ = this._projectServices.getStatus();
+  }
+  private getPriorityData() {
+    this.priorityList$ = this._projectServices.getPriority();
+  }
+
+  public editProjectDetails(projectDetails: ProjectDetails) {
+    this._projectServices.editProject(projectDetails).subscribe(() => {
+    }, () => {
+      console.log("Something went wrong!");
+    },
+      () => {
+        this.getProjectDetailsById();
+      })
   }
 }

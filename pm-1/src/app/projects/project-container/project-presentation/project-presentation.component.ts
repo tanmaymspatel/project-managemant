@@ -74,8 +74,6 @@ export class ProjectPresentationComponent implements OnInit {
   }
 
 
-
-
   /**
    * @name _emitData
    * @description used to emit new project details, edited project details and id of edited project to the container 

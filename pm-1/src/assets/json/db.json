@@ -14,33 +14,15 @@
     },
     {
       "id": 2,
-      "name": "Tanmay",
+      "name": "Mehul",
       "lastName": "Patel",
-      "email": "tanmay@gmail.com",
+      "email": "mehul@gmail.com",
       "password": "Admin@123",
       "profilePicture": "../../../../../assets/images/user-image.png",
       "projectId": [
         1,
         2
       ]
-    },
-    {
-      "id": 3,
-      "name": "Tanmay",
-      "lastName": "Patel",
-      "email": "tanmay@gmail.com",
-      "password": "Admin@123",
-      "profilePicture": "../../../../../assets/images/user-image.png",
-      "projectId": [
-        1,
-        2
-      ]
-    },
-    {
-      "projectName": "edfewf",
-      "description": "efwefwef",
-      "duration": "efwfwfwfwefwefwefewfwef",
-      "id": 4
     }
   ],
   "projects": [
@@ -52,7 +34,8 @@
       "todoList": [
         {
           "id": 1,
-          "name": "Task 1",
+          "taskName": "Task 1",
+          "status": "todo",
           "completedSubTasks": [
             {
               "id": 1,
@@ -80,39 +63,29 @@
           "priority": "low"
         },
         {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
+          "taskName": "dnsdlnc",
+          "status": "todo",
+          "priority": "medium",
+          "completedSubTasks": [],
+          "totalSubTasks": [],
+          "id": 3
+        },
+        {
+          "taskName": "Task 20",
+          "status": "todo",
+          "priority": "medium"
+        },
+        {
+          "taskName": "Task 21",
+          "status": "todo",
           "priority": "low"
         }
       ],
       "activeTaskList": [
         {
           "id": 1,
-          "name": "Task 1",
+          "taskName": "Task 1",
+          "status": "active",
           "completedSubTasks": [
             {
               "id": 1,
@@ -140,68 +113,19 @@
           "priority": "low"
         },
         {
-          "id": 2,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
+          "taskName": "task 11",
+          "status": "active",
+          "priority": "medium",
+          "completedSubTasks": [],
+          "totalSubTasks": [],
+          "id": 5
         }
       ],
       "completedTaskList": [
         {
           "id": 1,
-          "name": "Task 1",
-          "completedSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            }
-          ],
-          "totalSubTasks": [
-            {
-              "id": 1,
-              "subTaskName": "Sub Task 1"
-            },
-            {
-              "id": 2,
-              "subTaskName": "Sub Task 2"
-            },
-            {
-              "id": 3,
-              "subTaskName": "Sub Task 3"
-            }
-          ],
-          "priority": "low"
-        },
-        {
-          "id": 2,
-          "name": "Task 1",
+          "taskName": "Task 1",
+          "status": "completed",
           "completedSubTasks": [
             {
               "id": 1,
@@ -238,7 +162,8 @@
       "todoList": [
         {
           "id": 1,
-          "name": "Task 1",
+          "taskName": "Task 1",
+          "status": "todo",
           "completedSubTasks": [
             {
               "id": 1,
@@ -267,7 +192,8 @@
         },
         {
           "id": 2,
-          "name": "Task 1",
+          "status": "todo",
+          "taskName": "Task 1",
           "completedSubTasks": [
             {
               "id": 1,
@@ -298,7 +224,8 @@
       "activeTaskList": [
         {
           "id": 1,
-          "name": "Task 1",
+          "status": "active",
+          "taskName": "Task 1",
           "completedSubTasks": [
             {
               "id": 1,
@@ -327,7 +254,8 @@
         },
         {
           "id": 2,
-          "name": "Task 1",
+          "status": "active",
+          "taskName": "Task 1",
           "completedSubTasks": [
             {
               "id": 1,
@@ -358,7 +286,8 @@
       "completedTaskList": [
         {
           "id": 1,
-          "name": "Task 1",
+          "status": "completed",
+          "taskName": "Task 1",
           "completedSubTasks": [
             {
               "id": 1,
@@ -387,7 +316,8 @@
         },
         {
           "id": 2,
-          "name": "Task 1",
+          "status": "completed",
+          "taskName": "Task 1",
           "subTasks": [
             {
               "id": 1,
@@ -398,6 +328,34 @@
           "priority": "low"
         }
       ]
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "name": "todo"
+    },
+    {
+      "id": 2,
+      "name": "active"
+    },
+    {
+      "id": 3,
+      "name": "completed"
+    }
+  ],
+  "priority": [
+    {
+      "id": 1,
+      "name": "low"
+    },
+    {
+      "id": 2,
+      "name": "medium"
+    },
+    {
+      "id": 3,
+      "name": "high"
     }
   ]
 }

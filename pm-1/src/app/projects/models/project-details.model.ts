@@ -3,17 +3,17 @@ export class ProjectDetails {
     public projectName: string;
     public description: string;
     public duration: string;
-    public todoList?: TaskList[];
-    public activeTaskList?: TaskList[];
-    public completedTaskList?: TaskList[];
+    public todoList?: TaskDetails[];
+    public activeTaskList?: TaskDetails[];
+    public completedTaskList?: TaskDetails[];
 
     constructor(
         projectName: string,
         description: string,
         duration: string,
-        todoList: TaskList[],
-        activeTaskList: TaskList[],
-        completedTaskList: TaskList[],
+        todoList: TaskDetails[],
+        activeTaskList: TaskDetails[],
+        completedTaskList: TaskDetails[],
     ) {
         this.projectName = projectName;
         this.description = description;
@@ -26,10 +26,11 @@ export class ProjectDetails {
 
 // ----------------------------------------------------------
 
-export class TaskList {
+export class TaskDetails {
     public id: number;
     public taskName: string;
     public priority: string;
+    public status: string;
     public completedSubTasks?: SubTaskDetails[];
     public totalSubTasks?: SubTaskDetails[];
 
@@ -37,12 +38,14 @@ export class TaskList {
         id: number,
         subTaskName: string,
         priority: string,
+        status: string,
         completedSubTasks: SubTaskDetails[],
         totalSubTasks: SubTaskDetails[],
     ) {
         this.id = id;
         this.taskName = subTaskName;
         this.priority = priority;
+        this.status = status;
         this.completedSubTasks = completedSubTasks;
         this.totalSubTasks = totalSubTasks;
     }

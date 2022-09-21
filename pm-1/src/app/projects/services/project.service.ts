@@ -65,8 +65,6 @@ export class ProjectService {
     return this._http.get<ProjectDetails[]>(`${this._api}/projects`)
   }
 
-
-
   /**
    * @name editUser
    * @description Used to edit the details of the user
@@ -88,6 +86,14 @@ export class ProjectService {
 
   public editProject(editData: ProjectDetails): Observable<ProjectDetails> {
     return this._http.put<ProjectDetails>(`${this._api}/projects/${editData.id}`, editData);
+  }
+
+  // -------------------------------- task --------------------------------------- //
+  public getStatus(): Observable<any> {
+    return this._http.get<any>(`${this._api}/status`)
+  }
+  public getPriority(): Observable<any> {
+    return this._http.get<any>(`${this._api}/priority`)
   }
 }
 

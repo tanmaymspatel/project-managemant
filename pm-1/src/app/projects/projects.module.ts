@@ -13,6 +13,8 @@ import { ProjectService } from './services/project.service';
 import { TaskContainerComponent } from './task-container/task-container.component';
 import { TaskPresentationComponent } from './task-container/task-presentation/task-presentation.component';
 import { ProjectFormPresentationComponent } from './project-container/project-presentation/project-form-presentation/project-form-presentation.component';
+import { TaskFormPresentationComponent } from './task-container/task-presentation/task-form-presentation/task-form-presentation.component';
+import { IdToNamePipe } from './pipes/id-to-name.pipe';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ProjectFormPresentationComponent } from './project-container/project-pr
     DashboardPresentationComponent,
     TaskContainerComponent,
     TaskPresentationComponent,
-    ProjectFormPresentationComponent
+    ProjectFormPresentationComponent,
+    TaskFormPresentationComponent,
+    IdToNamePipe
   ],
   imports: [
     CommonModule,
