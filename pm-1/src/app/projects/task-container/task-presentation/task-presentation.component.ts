@@ -49,11 +49,11 @@ export class TaskPresentationComponent implements OnInit {
     return this._projectDetails;
   }
   // list of tasks which are to be done 
-  public todoList!: any[];
+  public todoList!: TaskDetails[];
   // list of the tasks which are currently being done
-  public activeTaskList!: any[];
+  public activeTaskList!: TaskDetails[];
   // list of tasks which are already done
-  public completedTaskList!: any[];
+  public completedTaskList!: TaskDetails[];
 
   public todoLength!: number;
   public activeTaskLength!: number;
@@ -88,7 +88,7 @@ export class TaskPresentationComponent implements OnInit {
   }
 
   public openTaskForm() {
-    this._taskPresenterService.openTaskFormOverlay(this._projectDetails, this.editId, this._priorityList, this._statusList,);
+    this._taskPresenterService.openTaskFormOverlay(this.editId, this._projectDetails, this._priorityList, this._statusList,)
   }
   public emitEditedProjectDetails() {
     this._taskPresenterService.newData$.subscribe((editedProjectDetails) => {

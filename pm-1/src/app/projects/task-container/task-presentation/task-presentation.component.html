@@ -1,95 +1,99 @@
-<div class="text-end py-3 mb-3">
-    <button class="btn btn-primary" (click)="openTaskForm()">
-        <span>+</span>
-        <span class="ps-2">Create Task</span>
-    </button>
-</div>
-<div class="row">
-    <div class="col-4">
-        <h6 class="list-heading pb-3 border-primary">
-            <span>To Do</span>
-            <span class=" ms-3">({{todoLength}})</span>
-        </h6>
-        <div class="mt-4">
-            <div *ngFor="let task of todoList" class="card transition px-3 py-2 mt-2">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="py-2 mb-0">{{task?.taskName}}</p>
-                    <p class="mb-0 py-2 card-actions">
-                        <span class="icon-edit text-primary cursor-pointer p-1" (click)="onEdit(task)"></span>
-                        <span class="icon-delete text-danger cursor-pointer ms-2 p-1" (click)="onDelete(task)"></span>
-                    </p>
+<div class="h-100 d-flex flex-column">
+    <div class="text-end py-3 mb-3">
+        <button class="btn btn-primary" (click)="openTaskForm()">
+            <span>+</span>
+            <span class="ps-2">Create Task</span>
+        </button>
+    </div>
+    <div class="row flex-grow-1 overflow-auto">
+        <div class="col-4">
+            <h6 class="list-heading pb-3 border-primary">
+                <span>To Do</span>
+                <span class=" ms-3">({{todoLength}})</span>
+            </h6>
+            <div class="mt-4">
+                <div *ngFor="let task of todoList" class="card transition px-3 py-2 mt-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="py-2 mb-0">{{task?.taskName}}</p>
+                        <p class="mb-0 py-2 card-actions">
+                            <span class="icon-edit text-primary cursor-pointer p-1" (click)="onEdit(task)"></span>
+                            <span class="icon-delete text-danger cursor-pointer ms-2 p-1"
+                                (click)="onDelete(task)"></span>
+                        </p>
+                    </div>
+                    <div class="progress-bar" *ngIf="task?.completedSubTasks?.length && task?.totalSubTasks?.length">
+                        <p class="mb-0">-------------------------</p>
+                        <p class="text-end mb-0">
+                            <span class="icon-task me-2"></span>
+                            <span>{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</span>
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center pt-3">
+                        <p class="py-1">{{task?.priority}}</p>
+                        <p><span class="d-flex p-1 bg-primary rounded-circle"></span></p>
+                    </div>
                 </div>
-                <div class="progress-bar" *ngIf="task?.completedSubTasks?.length && task?.totalSubTasks?.length">
-                    <p class="mb-0">-------------------------</p>
-                    <p class="text-end mb-0">
-                        <span class="icon-task me-2"></span>
-                        <span>{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</span>
-                    </p>
-                </div>
-                <div class="d-flex justify-content-between align-items-center pt-3">
-                    <p class="py-1">{{task?.priority}}</p>
-                    <p><span class="d-flex p-1 bg-primary rounded-circle"></span></p>
+            </div>
+            <!--  -->
+        </div>
+        <div class="col-4">
+            <h6 class="list-heading pb-3 border-info">
+                <span>Active Tasks</span>
+                <span class=" ms-3">({{activeTaskLength}})</span>
+            </h6>
+            <div class="mt-4">
+                <div *ngFor="let task of activeTaskList" class="card transition px-3 py-2 mt-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="py-2 mb-0">{{task?.taskName}}</p>
+                        <p class="mb-0 py-2 card-actions">
+                            <span class="icon-edit text-primary cursor-pointer p-1" (click)="onEdit(task)"></span>
+                            <span class="icon-delete text-danger cursor-pointer ms-2 p-1"
+                                (click)="onDelete(task)"></span>
+                        </p>
+                    </div>
+                    <div class="progress-bar" *ngIf="task?.completedSubTasks?.length && task?.totalSubTasks?.length">
+                        <p class="mb-0">-------------------------</p>
+                        <p class="text-end mb-0">
+                            <span class="icon-task me-2"></span>
+                            <span>{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</span>
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center pt-3">
+                        <p class="py-1">{{task?.priority}}</p>
+                        <p><span class="d-flex p-1 bg-info rounded-circle"></span></p>
+                    </div>
                 </div>
             </div>
         </div>
         <!--  -->
-    </div>
-    <div class="col-4">
-        <h6 class="list-heading pb-3 border-info">
-            <span>Active Tasks</span>
-            <span class=" ms-3">({{activeTaskLength}})</span>
-        </h6>
-        <div class="mt-4">
-            <div *ngFor="let task of activeTaskList" class="card transition px-3 py-2 mt-2">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="py-2 mb-0">{{task?.taskName}}</p>
-                    <p class="mb-0 py-2 card-actions">
-                        <span class="icon-edit text-primary cursor-pointer p-1" (click)="onEdit(task)"></span>
-                        <span class="icon-delete text-danger cursor-pointer ms-2 p-1" (click)="onDelete(task)"></span>
-                    </p>
-                </div>
-                <div class="progress-bar" *ngIf="task?.completedSubTasks?.length && task?.totalSubTasks?.length">
-                    <p class="mb-0">-------------------------</p>
-                    <p class="text-end mb-0">
-                        <span class="icon-task me-2"></span>
-                        <span>{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</span>
-                    </p>
-                </div>
-                <div class="d-flex justify-content-between align-items-center pt-3">
-                    <p class="py-1">{{task?.priority}}</p>
-                    <p><span class="d-flex p-1 bg-info rounded-circle"></span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  -->
-    <div class="col-4">
-        <h6 class="list-heading pb-3 border-success">
-            <span>Completed Tasks</span>
-            <span class=" ms-3">({{completedTaskLength}})</span>
-        </h6>
-        <div class="mt-4">
-            <div *ngFor="let task of completedTaskList" class="card transition px-3 py-2 mt-2">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="py-2 mb-0">{{task?.taskName}}</p>
-                    <p class="mb-0 py-2 card-actions">
-                        <span class="icon-edit text-primary cursor-pointer p-1" (click)="onEdit(task)"></span>
-                        <span class="icon-delete text-danger cursor-pointer ms-2 p-1" (click)="onDelete(task)"></span>
-                    </p>
-                </div>
-                <div class="progress-bar" *ngIf="task?.completedSubTasks?.length && task?.totalSubTasks?.length">
-                    <p class="mb-0">-------------------------</p>
-                    <p class="text-end mb-0">
-                        <span class="icon-task me-2"></span>
-                        <span>{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</span>
-                    </p>
-                </div>
-                <div class="d-flex justify-content-between align-items-center pt-3">
-                    <p class="py-1">{{task?.priority}}</p>
-                    <p><span class="d-flex p-1 bg-success rounded-circle"></span></p>
+        <div class="col-4">
+            <h6 class="list-heading pb-3 border-success">
+                <span>Completed Tasks</span>
+                <span class=" ms-3">({{completedTaskLength}})</span>
+            </h6>
+            <div class="mt-4">
+                <div *ngFor="let task of completedTaskList" class="card transition px-3 py-2 mt-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="py-2 mb-0">{{task?.taskName}}</p>
+                        <p class="mb-0 py-2 card-actions">
+                            <span class="icon-edit text-primary cursor-pointer p-1" (click)="onEdit(task)"></span>
+                            <span class="icon-delete text-danger cursor-pointer ms-2 p-1"
+                                (click)="onDelete(task)"></span>
+                        </p>
+                    </div>
+                    <div class="progress-bar" *ngIf="task?.completedSubTasks?.length && task?.totalSubTasks?.length">
+                        <p class="mb-0">-------------------------</p>
+                        <p class="text-end mb-0">
+                            <span class="icon-task me-2"></span>
+                            <span>{{task?.completedSubTasks?.length}}/{{task?.totalSubTasks?.length}}</span>
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center pt-3">
+                        <p class="py-1">{{task?.priority}}</p>
+                        <p><span class="d-flex p-1 bg-success rounded-circle"></span></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>

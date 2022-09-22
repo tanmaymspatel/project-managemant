@@ -20,8 +20,7 @@
       "password": "Admin@123",
       "profilePicture": "../../../../../assets/images/user-image.png",
       "projectId": [
-        1,
-        2
+        1
       ]
     }
   ],
@@ -69,16 +68,6 @@
           "completedSubTasks": [],
           "totalSubTasks": [],
           "id": 3
-        },
-        {
-          "taskName": "Task 20",
-          "status": "todo",
-          "priority": "medium"
-        },
-        {
-          "taskName": "Task 21",
-          "status": "todo",
-          "priority": "low"
         }
       ],
       "activeTaskList": [
@@ -191,9 +180,10 @@
           "priority": "low"
         },
         {
-          "id": 2,
+          "taskName": "Task 2",
           "status": "todo",
-          "taskName": "Task 1",
+          "priority": "low",
+          "id": 2,
           "completedSubTasks": [
             {
               "id": 1,
@@ -217,8 +207,31 @@
               "id": 3,
               "subTaskName": "Sub Task 3"
             }
-          ],
-          "priority": "low"
+          ]
+        },
+        {
+          "taskName": "task",
+          "status": "todo",
+          "priority": "low",
+          "completedSubTasks": [],
+          "totalSubTasks": [],
+          "id": 3
+        },
+        {
+          "taskName": "Task 15",
+          "status": "todo",
+          "priority": "low",
+          "completedSubTasks": [],
+          "totalSubTasks": [],
+          "id": 4
+        },
+        {
+          "taskName": "Task 16",
+          "status": "todo",
+          "priority": "low",
+          "completedSubTasks": [],
+          "totalSubTasks": [],
+          "id": 5
         }
       ],
       "activeTaskList": [
@@ -281,6 +294,14 @@
             }
           ],
           "priority": "low"
+        },
+        {
+          "taskName": "Task 18",
+          "status": "active",
+          "priority": "low",
+          "completedSubTasks": [],
+          "totalSubTasks": [],
+          "id": 3
         }
       ],
       "completedTaskList": [

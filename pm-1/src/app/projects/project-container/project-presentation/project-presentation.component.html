@@ -1,27 +1,25 @@
-<div class="h-100 overflow-y-auto">
-    <div class="text-end py-3 mb-3">
-        <!-- Start : Create button -->
-        <button class="btn btn-primary" (click)="openOverlayForm()"><span> + </span> <span class="ps-1">Create
-                Project</span> </button>
-        <!-- End : Create button -->
-    </div>
-    <div class="row g-4">
-        <!-- Start : Project card -->
-        <div *ngFor="let projectDetails of projectDetails" class="col-4 project-card position-relative">
-            <a class="card bg-light p-4 cursor-pointer transition"
-                [routerLink]="['/projects',projectDetails.id,'dashboard']" (click)="onProjectClick(projectDetails)">
-                <h4 class="pb-2">{{projectDetails?.projectName}}</h4>
-                <p>{{projectDetails?.description}}
-                </p>
-                <p class="text-end">
-                    <span class="icon-duration"></span>
-                    <span class="ps-2 project-duration">{{projectDetails?.duration}}</span>
-                </p>
-            </a>
-            <div class="project-actions transition position-absolute">
-                <span class="cursor-pointer icon icon-edit text-primary" (click)="onEdit(projectDetails)"></span>
-            </div>
+<div class="text-end py-3 mb-3">
+    <!-- Start : Create button -->
+    <button class="btn btn-primary" (click)="openOverlayForm()"><span> + </span> <span class="ps-1">Create
+            Project</span> </button>
+    <!-- End : Create button -->
+</div>
+<div class="row g-4">
+    <!-- Start : Project card -->
+    <div *ngFor="let projectDetails of projectDetails" class="col-4 project-card position-relative">
+        <a class="card bg-light p-4 cursor-pointer transition"
+            [routerLink]="['/projects',projectDetails.id,'dashboard']" (click)="onProjectClick(projectDetails)">
+            <h4 class="pb-2">{{projectDetails?.projectName}}</h4>
+            <p>{{projectDetails?.description}}
+            </p>
+            <p class="text-end">
+                <span class="icon-duration"></span>
+                <span class="ps-2 project-duration">{{projectDetails?.duration}}</span>
+            </p>
+        </a>
+        <div class="project-actions transition position-absolute">
+            <span class="cursor-pointer icon icon-edit text-primary" (click)="onEdit(projectDetails)"></span>
         </div>
-        <!-- End : Project card -->
     </div>
+    <!-- End : Project card -->
 </div>

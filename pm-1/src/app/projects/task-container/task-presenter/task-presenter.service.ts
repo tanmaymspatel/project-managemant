@@ -19,7 +19,7 @@ export class TaskPresenterService {
     this.newData$ = this._newData.asObservable();
   }
 
-  public openTaskFormOverlay(editid: number, projectDetails?: any, priorityList?: any, statusList?: any, editData?: TaskDetails,) {
+  public openTaskFormOverlay(editid: number, projectDetails: any, priorityList: any, statusList: any, editData?: TaskDetails,) {
 
     const OverlayRef = this._overlay.create({
       hasBackdrop: true,
@@ -55,8 +55,6 @@ export class TaskPresenterService {
           projectDetails?.completedTaskList.push(data);
         }
         this._newData.next(projectDetails);
-        console.log(projectDetails);
-
       }
       OverlayRef.detach()
     })
@@ -69,17 +67,26 @@ export class TaskPresenterService {
     // edited data from the task form on submitting
     componentRef.instance.editedTaskFormData.subscribe(data => {
       let index;
+      data.id = editid
       if (data.status == "todo") {
         index = projectDetails.todoList.findIndex((ele: any) => ele.id === editid)
+        data.completedSubTasks = projectDetails.todoList[index].completedSubTasks;
+        data.totalSubTasks = projectDetails.todoList[index].totalSubTasks;
         projectDetails.todoList.splice(index, 1, data);
       }
       else if (data.status == "active") {
         index = projectDetails.activeTaskList.findIndex((ele: any) => ele.id === editid)
+        data.completedSubTasks = projectDetails.activeTaskList[index].completedSubTasks;
+        data.totalSubTasks = projectDetails.activeTaskList[index].totalSubTasks;
         projectDetails.activeTaskList.splice(index, 1, data);
+        console.log(data);
       }
       if (data.status == "completed") {
         index = projectDetails.completedTaskList.findIndex((ele: any) => ele.id === editid)
+        data.completedSubTasks = projectDetails.completedTaskList[index].completedSubTasks;
+        data.totalSubTasks = projectDetails.completedTaskList[index].totalSubTasks;
         projectDetails.completedTaskList.splice(index, 1, data);
+        console.log(data);
       }
       this._newData.next(projectDetails);
       OverlayRef.detach();
