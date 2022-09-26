@@ -69,6 +69,7 @@ export class TaskPresentationComponent implements OnInit {
 
   ngOnInit(): void {
     this.emitEditedProjectDetails();
+
   }
 
   /**

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Subject } from 'rxjs/internal/Subject';
 import { ProjectDetails, TaskDetails } from '../../models/project-details.model';
+import { ProjectService } from '../../services/project.service';
 import { TaskFormPresentationComponent } from '../task-presentation/task-form-presentation/task-form-presentation.component';
 
 @Injectable()
@@ -12,7 +13,8 @@ export class TaskPresenterService {
   public newData$: Observable<ProjectDetails>;
   private _newData: Subject<ProjectDetails>
   constructor(
-    private _overlay: Overlay
+    private _overlay: Overlay,
+    private _projectService: ProjectService
   ) {
     this._newData = new Subject();
     this.newData$ = new Observable();

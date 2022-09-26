@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { map, Subject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserDetails } from 'src/app/shared/models/userDetails.model';
 import { environment } from 'src/environments/environment';
-import { ProjectDetails } from '../models/project-details.model';
+import { ProjectDetails, TaskDetails } from '../models/project-details.model';
 
 @Injectable()
 export class ProjectService {
@@ -18,19 +18,20 @@ export class ProjectService {
 
   // api link for getting data
   private _api: string;
-  private currentProjectId: Subject<number>
+  private _currentProjectId: Subject<number>
 
   constructor(
     private _http: HttpClient,
   ) {
     this._api = environment.baseURL;
-    this.currentProjectId = new Subject();
+    this._currentProjectId = new Subject();
     this.currentProjectId$ = new Observable();
-    this.currentProjectId$ = this.currentProjectId.asObservable();
+    this.currentProjectId$ = this._currentProjectId.asObservable();
 
     this._editId = new Subject();
     this.editId = new Observable();
     this.editId = this._editId.asObservable();
+
   }
 
   /**
@@ -53,7 +54,7 @@ export class ProjectService {
    * @param id - id of the project
    */
   public getCurrentProjectId(id: number) {
-    this.currentProjectId.next(id);
+    this._currentProjectId.next(id);
   }
 
   /**
@@ -74,14 +75,6 @@ export class ProjectService {
     return this._http.put<UserDetails>(`${this._api}/users/${user.id}`, user);
   }
 
-  // /**
-  //  * @name deleteProject
-  //  * @description - Used to delete the project of particular id 
-  //  * @param id - of the project which is to be deleted
-  //  */
-  // public deleteProject(id: number) {
-  //   return this._http.delete(`${this._api}/users/${id}`);
-  // }
 
 
   public editProject(editData: ProjectDetails): Observable<ProjectDetails> {
@@ -94,6 +87,16 @@ export class ProjectService {
   }
   public getPriority(): Observable<any> {
     return this._http.get<any>(`${this._api}/priority`)
+  }
+
+  public getTaskDetails(id: number): Observable<any> {
+    return this._http.get<ProjectDetails>(`${this._api}/projects/${id}`).pipe(
+      map((res: ProjectDetails) => {
+        let arr: TaskDetails[] = [];
+        arr = arr.concat(res.activeTaskList as TaskDetails[], res.completedTaskList as TaskDetails[], res.todoList as TaskDetails[])
+        return arr
+      })
+    )
   }
 }
 

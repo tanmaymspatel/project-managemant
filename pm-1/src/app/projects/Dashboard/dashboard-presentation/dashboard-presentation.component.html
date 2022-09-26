@@ -41,7 +41,7 @@
     <div class="row g-3 mt-3">
         <div class="col-3">
             <div class="card p-3">
-                <p>56</p>
+                <p>{{currentTaskDetailsLength}}</p>
                 <h6 class="m-0">Tasks</h6>
             </div>
         </div>
@@ -71,14 +71,37 @@
     <div class="row g-3 mt-3">
         <div class="col-9">
             <div class="card p-3">
-                <h5>Tasks</h5>
+                <h5 class="text-center pb-3">Tasks</h5>
                 <!-- no records -->
-                <div class="text-center">
-                    <figure>
-                        <img class="img-fluid" [src]="norecordsImage" alt="no-records-image">
-                    </figure>
-                    <p class="text-primary">No records Found!</p>
+                <div *ngIf="!currentTaskDetails?.length">
+                    <div class="text-center">
+                        <figure>
+                            <img class="img-fluid" [src]="norecordsImage" alt="no-records-image">
+                        </figure>
+                        <p class="text-primary">No records Found!</p>
+                    </div>
                 </div>
+                <div *ngIf="currentTaskDetails?.length">
+                    <div>
+                        <table class="w-100">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>priority</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let task of currentTaskDetails">
+                                    <td>{{task.status}}</td>
+                                    <td>{{task.taskName}}</td>
+                                    <td>{{task.priority}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="col-3">
