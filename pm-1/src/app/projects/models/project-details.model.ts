@@ -3,6 +3,7 @@ export class ProjectDetails {
     public projectName: string;
     public description: string;
     public duration: string;
+    public teamId: number;
     public todoList?: TaskDetails[];
     public activeTaskList?: TaskDetails[];
     public completedTaskList?: TaskDetails[];
@@ -11,6 +12,7 @@ export class ProjectDetails {
         projectName: string,
         description: string,
         duration: string,
+        teamId: number,
         todoList: TaskDetails[],
         activeTaskList: TaskDetails[],
         completedTaskList: TaskDetails[],
@@ -18,6 +20,7 @@ export class ProjectDetails {
         this.projectName = projectName;
         this.description = description;
         this.duration = duration;
+        this.teamId = teamId;
         this.todoList = todoList;
         this.activeTaskList = activeTaskList;
         this.completedTaskList = completedTaskList;

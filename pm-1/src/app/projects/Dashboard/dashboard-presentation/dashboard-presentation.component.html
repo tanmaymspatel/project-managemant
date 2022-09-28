@@ -1,38 +1,49 @@
 <!-- Start : first row -->
 <div class="h-100">
-    <div class="row bg-light py-4 border-radius">
-        <div class="col-3 border-end border-secondary border-3">
-            <div class="text-center">
-                <h6 class="m-0">Planning</h6>
-                <p class="m-0">
-                    <span class="icon-completed text-success"></span>
-                </p>
-                <p class="m-0">Done</p>
+    <div>
+        <div class="col-12 pb-3">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                    [ngStyle]="{'width.%':'60'}">
+                </div>
             </div>
         </div>
-        <div class="col-3 border-end border-secondary border-3">
-            <div class="text-center">
-                <h6 class="m-0">Design</h6>
-                <p class="m-0">
-                    <span class="icon-completed text-success"></span>
-                </p>
-                <p class="m-0">Done</p>
-            </div>
-        </div>
-        <div class="col-3 border-end border-secondary border-3">
-            <div class="text-center">
-                <h6 class="m-0">Development</h6>
-                <p class="m-0">67%</p>
-                <p class="m-0">In Progress</p>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="text-center">
-                <h6 class="m-0 ">Testing</h6>
-                <p class="m-0">
-                    <span class="icon-waiting text-warning"></span>
-                </p>
-                <p class="m-0 ">Waiting</p>
+        <div class="card">
+            <div class="row g-3 border-radius mt-3 py-4">
+                <div class="col-3 border-end border-secondary border-3">
+                    <div class="text-center">
+                        <h6 class="m-0">Planning</h6>
+                        <p class="m-0">
+                            <span class="icon-completed text-success"></span>
+                        </p>
+                        <p class="m-0">Done</p>
+                    </div>
+                </div>
+                <div class="col-3 border-end border-secondary border-3">
+                    <div class="text-center">
+                        <h6 class="m-0">Design</h6>
+                        <p class="m-0">
+                            <span class="icon-completed text-success"></span>
+                        </p>
+                        <p class="m-0">Done</p>
+                    </div>
+                </div>
+                <div class="col-3 border-end border-secondary border-3">
+                    <div class="text-center">
+                        <h6 class="m-0">Development</h6>
+                        <p class="m-0">67%</p>
+                        <p class="m-0">In Progress</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="text-center">
+                        <h6 class="m-0 ">Testing</h6>
+                        <p class="m-0">
+                            <span class="icon-waiting text-warning"></span>
+                        </p>
+                        <p class="m-0 ">Waiting</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -40,38 +51,48 @@
     <!-- Start : Second row -->
     <div class="row g-3 mt-3">
         <div class="col-3">
-            <div class="card p-3">
-                <p>{{currentTaskDetailsLength}}</p>
-                <h6 class="m-0">Tasks</h6>
+            <div class="card p-3 d-flex flex-row justify-content-between">
+                <div>
+                    <p class="pb-4">{{currentTaskDetailsLength}}</p>
+                    <h6 class="m-0 py-2">Tasks</h6>
+                </div>
+                <div>
+                    <span class="icon-task fs-4 mt-3"></span>
+                </div>
             </div>
         </div>
         <div class="col-9 card">
             <div class="row p-3">
-                <div class="col-3">
-                    <p>Planning</p>
-                    <p>2</p>
-                </div>
-                <div class="col-3">
-                    <p>Designing</p>
-                    <p>2</p>
-                </div>
-                <div class="col-3">
-                    <p>Development</p>
-                    <p>2</p>
-                </div>
-                <div class="col-3">
-                    <p>Testing</p>
-                    <p>2</p>
-                </div>
+                <ng-container *ngFor="let team of members; let i = index">
+                    <div class="col-3 text-center">
+                        <p class="">{{team?.department}}</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <ng-container *ngFor="let member of team?.teamMembers.slice(0,2); let i = index">
+                                <figure class="default-avatar rounded-circle member-overlap-item">
+                                    <img [src]="member.profilePicture" alt="profile-image" title="profile image">
+                                </figure>
+                            </ng-container>
+                            <div>
+                                <p
+                                    class="default-avatar bg-dark rounded-circle member-overlap-item d-flex align-items-center justify-content-center">
+                                    <small class="text-light"> + {{team?.teamMembers?.length - 2}} </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>
     <!-- End : Second row -->
     <!-- Start : Third row -->
-    <div class="row g-3 mt-3">
+    <div class="row g-3 mt-2">
         <div class="col-9">
             <div class="card p-3">
-                <h5 class="text-center pb-3">Tasks</h5>
+                <div class="d-flex justify-content-between align-items-center pb-3">
+                    <h5 class="m-0">Tasks</h5>
+                    <a [routerLink]="['/projects',currentId,'tasks']" class="text-primary px-3">View All</a>
+                </div>
                 <!-- no records -->
                 <div *ngIf="!currentTaskDetails?.length">
                     <div class="text-center">
@@ -81,18 +102,18 @@
                         <p class="text-primary">No records Found!</p>
                     </div>
                 </div>
-                <div *ngIf="currentTaskDetails?.length">
+                <ng-container *ngIf="currentTaskDetails?.length">
                     <div>
-                        <table class="w-100">
+                        <table class="table table-striped w-100">
                             <thead>
-                                <tr>
+                                <tr class="text-uppercase">
                                     <th>Status</th>
                                     <th>Name</th>
                                     <th>priority</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let task of currentTaskDetails">
+                                <tr *ngFor="let task of currentTaskDetails | slice: 0:5; let i = index">
                                     <td>{{task.status}}</td>
                                     <td>{{task.taskName}}</td>
                                     <td>{{task.priority}}</td>
@@ -100,14 +121,15 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </ng-container>
 
             </div>
         </div>
         <div class="col-3">
             <div>
-                <div class="card p-3">Total Duration</div>
-                <div class="card p-3 mt-3">Total Cost</div>
+                <div class="card p-3" style="height: 335px;">
+
+                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -12,22 +11,48 @@ import { ProjectService } from '../services/project.service';
 export class DashboardComponent implements OnInit {
 
   public currentTaskDetails$: Observable<TaskDetails[]>
-  private id !: number
+  public teamDetails$: Observable<any>
+  private projectId !: number
+  private teamId !: number
   constructor(
     private _projectService: ProjectService,
     private _activatedRoute: ActivatedRoute
 
   ) {
-    this.currentTaskDetails$ = new Observable()
+    this.currentTaskDetails$ = new Observable();
+    this.teamDetails$ = new Observable();
   }
 
   ngOnInit(): void {
+    this._getProjectId();
+    this.getTeamId();
     this.getTaskDetails();
   }
 
-  public getTaskDetails() {
-    this.id = this._activatedRoute.snapshot.params['id'];
-    this.currentTaskDetails$ = this._projectService.getTaskDetails(this.id);
+  private getTaskDetails() {
+    this.currentTaskDetails$ = this._projectService.getTaskDetails(this.projectId);
+  }
+
+  private getTeamDetails() {
+    this.teamDetails$ = this._projectService.getTeamDeatailById(this.teamId)
+  }
+
+  private _getProjectId() {
+    this.projectId = this._activatedRoute.snapshot.params['id'];
+  }
+
+  private getTeamId() {
+    this._projectService.getTeamId(this.projectId).subscribe({
+      next: (id) => {
+        this.teamId = id;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+      complete: () => {
+        this.getTeamDetails();
+      }
+    })
   }
 
 }

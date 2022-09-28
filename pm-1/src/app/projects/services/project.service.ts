@@ -71,7 +71,6 @@ export class ProjectService {
    * @description Used to edit the details of the user
    */
   public editUser(user: UserDetails): Observable<UserDetails> {
-
     return this._http.put<UserDetails>(`${this._api}/users/${user.id}`, user);
   }
 
@@ -97,6 +96,24 @@ export class ProjectService {
         return arr
       })
     )
+  }
+
+
+
+  //---------------------------------------- Teams --------------------------------------------------------------------------------------------------------------
+
+  public getTeamDeatailById(teamId: number): Observable<any> {
+    return this._http.get<any>(`${this._api}/teams/${teamId}`)
+  }
+
+  public getTeamId(projectId: number): Observable<any> {
+    return this._http.get<ProjectDetails>(`${this._api}/projects/${projectId}`).pipe(
+      map((res: ProjectDetails) => res?.teamId)
+    )
+  }
+
+  public getTeamDetailsById(teamId: number): Observable<any> {
+    return this._http.get<any>(`${this._api}/teams/${teamId}`)
   }
 }
 
