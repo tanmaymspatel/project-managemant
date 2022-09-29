@@ -15,6 +15,8 @@ import { TaskPresentationComponent } from './task-container/task-presentation/ta
 import { ProjectFormPresentationComponent } from './project-container/project-presentation/project-form-presentation/project-form-presentation.component';
 import { TaskFormPresentationComponent } from './task-container/task-presentation/task-form-presentation/task-form-presentation.component';
 import { IdToNamePipe } from './pipes/id-to-name.pipe';
+import { TeamContainerComponent } from './team-container/team-container.component';
+import { TeamPresentationComponent } from './team-container/team-presentation/team-presentation.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { IdToNamePipe } from './pipes/id-to-name.pipe';
     TaskPresentationComponent,
     ProjectFormPresentationComponent,
     TaskFormPresentationComponent,
-    IdToNamePipe
+    IdToNamePipe,
+    TeamContainerComponent,
+    TeamPresentationComponent
   ],
   imports: [
     CommonModule,

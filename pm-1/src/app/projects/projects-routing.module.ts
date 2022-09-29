@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './Dashboard/dashboard.component';
 import { ProjectContainerComponent } from './project-container/project-container.component';
 import { TaskContainerComponent } from './task-container/task-container.component';
+import { TeamContainerComponent } from './team-container/team-container.component';
 
 const routes: Routes =
   [
@@ -15,6 +16,9 @@ const routes: Routes =
     },
     {
       path: ':id/tasks', component: TaskContainerComponent
+    },
+    {
+      path: ':id/team', component: TeamContainerComponent
     }
 
   ];

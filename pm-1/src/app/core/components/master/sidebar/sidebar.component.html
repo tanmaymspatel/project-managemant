@@ -35,7 +35,8 @@
                 </li>
                 <!-- Team navigation -->
                 <li class="nav-item w-100" *ngIf="!isProjectPage">
-                    <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
+                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'team']"
+                        routerLinkActive="active">
                         <span class="icon icon-users"></span>
                         <span class="ps-2">Teams</span>
                     </a>

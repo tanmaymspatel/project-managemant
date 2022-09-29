@@ -651,30 +651,35 @@
               "id": 1,
               "name": "Jigar Pathan",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "planning"
             },
             {
               "id": 2,
               "name": "Aman Verma",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Planning"
             },
             {
               "id": 3,
               "name": "Ankit Sharma",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Planning"
             },
             {
               "id": 4,
               "name": "Ayushi Parmar",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Planning"
             },
             {
               "id": 5,
               "name": "Ayushi Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Planning"
             }
           ]
@@ -686,24 +691,28 @@
               "id": 1,
               "name": "Viral Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             },
             {
               "id": 2,
               "name": "Chirag Joshi",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             },
             {
               "id": 3,
               "name": "Nilay Joshi",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             },
             {
               "id": 4,
               "name": "Manish Joshi",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             }
           ]
@@ -715,24 +724,28 @@
               "id": 1,
               "name": "Tanmay Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Front-end Developer"
             },
             {
               "id": 2,
               "name": "Mehul Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Back-end Developer"
             },
             {
               "id": 3,
               "name": "Rahul Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Back-end Developer"
             },
             {
               "id": 4,
               "name": "Mitesh Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Back-end Developer"
             }
           ]
@@ -744,24 +757,28 @@
               "id": 1,
               "name": "Sushil Pande",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             },
             {
               "id": 2,
               "name": "Dharmit shah",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             },
             {
               "id": 3,
               "name": "Dhaval Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             },
             {
               "id": 4,
               "name": "Sachin Patil",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             }
           ]
@@ -778,24 +795,28 @@
               "id": 1,
               "name": "Jigar Pathan",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "planning"
             },
             {
               "id": 2,
               "name": "Aman Verma",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Planning"
             },
             {
               "id": 3,
               "name": "Ankit Sharma",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Planning"
             },
             {
               "id": 4,
               "name": "Ayushi Parmar",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Planning"
             }
           ]
@@ -807,24 +828,28 @@
               "id": 1,
               "name": "Viral Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             },
             {
               "id": 2,
               "name": "Chirag Joshi",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             },
             {
               "id": 3,
               "name": "Nilay Joshi",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             },
             {
               "id": 4,
               "name": "Manish Joshi",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Web Designer"
             }
           ]
@@ -836,24 +861,28 @@
               "id": 1,
               "name": "Tanmay Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Front-end Developer"
             },
             {
               "id": 2,
               "name": "Mehul Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Back-end Developer"
             },
             {
               "id": 3,
               "name": "Rahul Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Back-end Developer"
             },
             {
               "id": 4,
               "name": "Mitesh Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Back-end Developer"
             }
           ]
@@ -865,24 +894,28 @@
               "id": 1,
               "name": "Sushil Pande",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             },
             {
               "id": 2,
               "name": "Dharmit shah",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             },
             {
               "id": 3,
               "name": "Dhaval Patel",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             },
             {
               "id": 4,
               "name": "Sachin Patil",
               "profilePicture": "https://www.svgrepo.com/show/105032/avatar.svg",
+              "emailId": "user@gmail.com",
               "designation": "Tester"
             }
           ]
