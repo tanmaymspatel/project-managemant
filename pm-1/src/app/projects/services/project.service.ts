@@ -114,7 +114,7 @@ export class ProjectService {
 
   public getTeamMembersById(teamId: number): Observable<any> {
     return this._http.get<any>(`${this._api}/teams/${teamId}`).pipe(
-      map((res: any) => res?.members)
+      map((res: any) => res?.members.map((res: any) => res.teamMembers).flat())
     )
   }
 }

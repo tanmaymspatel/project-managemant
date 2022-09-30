@@ -9,16 +9,23 @@ const routes: Routes =
   [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
-      path: 'home', component: ProjectContainerComponent
+      path: 'home', component: ProjectContainerComponent,
+      data: { title: "home" }
     },
     {
-      path: ':id/dashboard', component: DashboardComponent
+      path: ':id/dashboard', component: DashboardComponent,
+      data: { title: "Dashboard" }
+
     },
     {
-      path: ':id/tasks', component: TaskContainerComponent
+      path: ':id/tasks', component: TaskContainerComponent,
+      data: { title: "Tasks" }
+
     },
     {
-      path: ':id/team', component: TeamContainerComponent
+      path: ':id/team', component: TeamContainerComponent,
+      data: { title: "Team" }
+
     }
 
   ];
