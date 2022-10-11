@@ -10,21 +10,21 @@ const routes: Routes =
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
       path: 'home', component: ProjectContainerComponent,
-      data: { title: "home" }
+      data: { title: "home", search: false }
     },
     {
       path: ':id/dashboard', component: DashboardComponent,
-      data: { title: "Dashboard" }
+      data: { title: "Dashboard", search: false }
 
     },
     {
       path: ':id/tasks', component: TaskContainerComponent,
-      data: { title: "Tasks" }
+      data: { title: "Tasks", search: false }
 
     },
     {
       path: ':id/team', component: TeamContainerComponent,
-      data: { title: "Team" }
+      data: { title: "Team", search: true }
 
     }
 
