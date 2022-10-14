@@ -1,4 +1,3 @@
-
 // Base
 @import '~/src/assets/scss/base/index';
 
@@ -26,5 +25,5 @@
 // // Toastr
 // @import '~node_modules/ngx-toastr/toastr';
 
-// //CDk -overlay styles
-// @import '@angular/cdk/overlay-prebuilt.css';
+//CDk -overlay styles
+@import '@angular/cdk/overlay-prebuilt.css';

@@ -1,35 +1,42 @@
 <div class="h-100 d-flex flex-column">
     <!-- start : sidebar header -->
     <div class="sidebar-header d-flex align-items-center px-4">
-        <a class="d-flex align-atems-center cursor-pointer">
+        <a class="d-flex align-items-center cursor-pointer">
             <span class="icon-logo fs-4 text-primary"></span>
             <span class="logo-text ps-2 fs-5">Cube Solutions</span>
         </a>
     </div>
     <!-- end: sidebar header -->
     <div class="px-3 d-flex flex-column justify-content-between overflow-hidden flex-grow-1">
-        <div class="flex-grow-1">
+        <div class="flex-grow-1 overflow-y-auto">
             <ul class="nav">
+                <!-- Projects navigation -->
                 <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2 active">
+                    <a class="nav-link my-1 cursor-pointer ps-2" routerLink="/projects/home" routerLinkActive="active">
                         <span class="icon icon-dashboard"></span>
                         <span class="ps-2">Projects</span>
                     </a>
                 </li>
-                <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                <!-- Dashboard navigation -->
+                <li class="nav-item w-100" *ngIf="!isProjectPage">
+                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'dashboard']"
+                        routerLinkActive="active">
                         <span class="icon icon-dashboard"></span>
                         <span class="ps-2">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                <!-- Task navigation -->
+                <li class="nav-item w-100" *ngIf="!isProjectPage">
+                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'tasks']"
+                        routerLinkActive="active">
                         <span class="icon icon-task"></span>
                         <span class="ps-2">Tasks</span>
                     </a>
                 </li>
-                <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                <!-- Team navigation -->
+                <li class="nav-item w-100" *ngIf="!isProjectPage">
+                    <a class="nav-link my-1 cursor-pointer ps-2" [routerLink]="['/projects',currentId,'team']"
+                        routerLinkActive="active">
                         <span class="icon icon-users"></span>
                         <span class="ps-2">Teams</span>
                     </a>
@@ -39,14 +46,16 @@
 
         <div>
             <ul class="nav pb-3">
+                <!-- Help navigation -->
                 <li class="nav-item w-100">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                    <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-help"></span>
                         <span class="ps-2">Help</span>
                     </a>
                 </li>
+                <!-- Logout navigation -->
                 <li class="nav-item w-100" (click)="logOut()">
-                    <a class="nav-link my-1 cursor-pointer ps-2">
+                    <a class="nav-link my-1 cursor-pointer ps-2" routerLinkActive="active">
                         <span class="icon icon-signout"></span>
                         <span class="ps-2">log Out</span>
                     </a>

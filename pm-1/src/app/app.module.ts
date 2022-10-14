@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthGuard } from './core/guards/auth.guard';
+import { RedirectGuard } from './core/guards/redirect.guard';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthGuard } from './core/guards/auth.guard';
     HttpClientModule,
   ],
   providers: [
-    AuthGuard
+    AuthGuard, 
+    RedirectGuard
   ],
   bootstrap: [AppComponent]
 })

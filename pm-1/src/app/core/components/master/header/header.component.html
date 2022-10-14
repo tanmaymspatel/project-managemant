@@ -1,17 +1,44 @@
 <div class="h-100 d-flex align-atems-center justify-content-between">
+    <!-- Start : Header left -->
     <div class="d-flex align-items-center flex-grow-1">
+        <!-- Pagetitle -->
         <h1 class="header-title text-primary">{{pageTitle}}</h1>
     </div>
+    <!-- End : Header left -->
+    <!-- Start : Header right -->
     <div class="d-flex align-items-center">
-        <div class="px-3">
-            <span class="icon icon-notification fs-5 cursor-pointer"></span>
+        <div *ngIf="isSearch" class="d-flex align-items-center">
+            <div class="d-flex align-items-center justify-content-center position-relative">
+                <input id="search" class="form-control" type="search" placeholder="Search"
+                    (input)="sendSearchString($event)">
+                <!-- label search icon -->
+                <label class="search-label position-absolute" for="search">
+                    <span class="icon-search text-dark"></span>
+                </label>
+            </div>
+            <div class="ms-4">
+                <select class="form-select">
+                    <option selected>Department</option>
+                    <option value="Planning">Planning</option>
+                    <option value="Web Designer">Web Designer</option>
+                    <option value="Front-end Developer">Front-end Developer</option>
+                    <option value="Back-end Developer">Back-end Developer</option>
+                </select>
+            </div>
         </div>
-        <div class="d-flex align-items-center ps-2">
-            <figure class="px-1 m-0 user-image bg-secondary cursor-pointer">
-                <img class="img-fluid p-2" [src]="user?.profilePicture" alt="user-image">
-            </figure>
-            <span class="px-2 cursor-pointer">{{user?.name + ' ' + user?.lastName}}</span>
-            <span class="icon-down text-primary cursor-pointer"></span>
+
+        <div class="d-flex align-items-center">
+            <div class="px-3">
+                <span class="icon icon-notification fs-5 cursor-pointer"></span>
+            </div>
+            <div class="d-flex align-items-center ps-2">
+                <figure class="px-1 m-0 user-image bg-secondary cursor-pointer">
+                    <img class="img-fluid p-2" [src]="user.profilePicture" alt="user-image">
+                </figure>
+                <span class="px-2 cursor-pointer">{{user.name + ' ' + user.lastName}}</span>
+                <span class="icon-down text-primary cursor-pointer"></span>
+            </div>
         </div>
     </div>
+    <!-- End : Header right -->
 </div>

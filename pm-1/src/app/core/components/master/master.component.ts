@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { UserDetails } from '../../models/userDetails.model';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserDetails } from '../../../shared/models/userDetails.model';
 
 @Component({
   selector: 'app-master',
@@ -7,15 +8,18 @@ import { UserDetails } from '../../models/userDetails.model';
 })
 export class MasterComponent implements OnInit {
 
+  // details of currently logged in user
   public currentUser!: UserDetails
-  user: any
+  public user: any;
+  // public isProjects !: boolean
 
-  constructor() { }
 
   ngOnInit(): void {
+    // geeting currently logged in user
     this.user = localStorage.getItem('user');
     this.currentUser = JSON.parse(this.user)
   }
+
   // tanmay.patel@1rivet.com
   // Admin@123
 }

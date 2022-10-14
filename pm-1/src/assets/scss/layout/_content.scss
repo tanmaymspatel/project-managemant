@@ -1,31 +1,81 @@
 //login page styles
-#login-image{
+#login-image {
     // Background : Linear-gradient (rgba1, rgba2), url(‘image url’); 
-    background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../../images/login-background.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../images/login-background.jpg);
     background-size: cover;
 }
-#login-form{
-    padding:6rem;
+
+#login-form {
+    padding: 6rem;
+
     @include media-breakpoint-up(md) {
         padding: 4rem;
     }
+
     @include media-breakpoint-up(xxl) {
         padding: 10rem;
     }
-    .home-logo{
+
+    .home-logo {
         font-size: 3rem;
     }
-    .company-name{
+
+    .company-name {
         font-size: 1.75rem;
     }
-    .welcome-text{
+
+    .welcome-text {
         font-size: 1.5rem;
     }
-    .subtitle{
+
+    .subtitle {
         font-size: 0.875rem;
     }
 }
 
+// Dashboard
+.icon-completed,
+.icon-waiting {
+    font-size: 7rem;
+}
+
+// projects container
+.project-card {
+    .project-actions {
+        display: none;
+        top: 10%;
+        right: 10%
+    }
+
+    &:hover {
+        .project-actions {
+            display: block;
+        }
+    }
+}
+
+.default-avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.member-overlap-item {
+    margin-right: -20px;
+}
+
+
+// task container
+.card {
+    .card-actions {
+        display: none;
+    }
+
+    &:hover {
+        .card-actions {
+            display: block;
+        }
+    }
+}
 
 
 

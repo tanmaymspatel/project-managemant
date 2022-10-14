@@ -1,0 +1,28 @@
+<div class="h-100 overflow-hidden">
+    <div class="overflow-auto h-100">
+        <table class="table table-hover position-relative align-middle">
+            <thead class="position-sticky top-0 bg-secondary">
+                <tr>
+                    <th>User</th>
+                    <th>Name</th>
+                    <th>Email Id</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of teamDetails">
+                    <td>
+                        <figure class="default-avatar rounded-circle">
+                            <img [src]="member.profilePicture" alt="profile-image" title="profile image">
+                        </figure>
+                    </td>
+                    <td>{{member.name}}</td>
+                    <td>{{member.emailId}}</td>
+                    <td>{{member.designation}}</td>
+                    <td>{{member.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

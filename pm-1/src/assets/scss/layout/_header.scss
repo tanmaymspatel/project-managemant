@@ -1,14 +1,17 @@
-#header{
-    height: $sideheader-height;
-    .header-title{
+#header {
+    flex: 0 0 $sideheader-height;
+
+    .header-title {
         font-size: 2rem;
     }
-    .user-image{
+
+    .user-image {
         height: $header-img-size;
         width: $header-img-size;
         border-radius: $circle-radius;
     }
-    .icon-down{
+
+    .icon-down {
         font-size: 0.75rem;
     }
 }
